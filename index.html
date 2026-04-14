@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escape Room Web</title>
+  </head>
+  <body>
+    <header class="cabecera">
+      <h1>Escape Room Web</h1>
+      <p>Resuelve los retos para escapar</p>
+    </header>
+
+    <main class="contenedor">
+      <section id="pantalla-inicio" class="pantalla">
+        <h2>Bienvenido/a</h2>
+        <p>
+          Estás atrapado en una web misteriosa. Supera los retos para escapar.
+        </p>
+        <button id="btn-empezar">Empezar juego</button>
+      </section>
+
+      <!-- Reto 1: Usuario introduce respuesta al input-->
+
+      <section id="reto1" class="pantalla oculta">
+        <h2>Reto 1</h2>
+        <p>2+2=?</p>
+        <input
+          type="number"
+          id="numeroJugador"
+          placeholder="Escribe tu respuesta"
+        />
+        <button id="btn-reto1">Comprobar</button>
+        <p id="mensajeReto1" class="mensaje"></p>
+      </section>
+
+      <!-- Reto 2: Usuario elige una de las 4 botones con la respuesta correcta-->
+      <section id="reto2" class="pantalla oculta">
+        <h2>Reto 2</h2>
+        <p>Continua la secuencia de numeros 2, 4, 6, ... ?</p>
+        <div class="opciones">
+          <button type="button">7</button>
+          <button type="button">10</button>
+          <button type="button">8</button>
+          <button type="button">12</button>
+        </div>
+        <p id="mensajeReto2" class="mensaje"></p>
+      </section>
+
+      <!-- Reto 3: Usuario elige una de las 3 opciones de select con la respuesta correcta-->
+
+      <section id="reto3" class="pantalla oculta">
+        <h2>Reto 3</h2>
+
+        <p>Observa la gráfica y selecciona la respuesta correcta:</p>
+
+        <figure>
+          <img
+            src="img/grafico.png"
+            alt="Gráfico matemático de una función"
+            class="imagen-reto"
+          />
+          <figcaption>Gráfica de una función</figcaption>
+        </figure>
+
+        <label for="respuestaReto3">Elige una opción:</label>
+        <select id="respuestaReto3">
+          <option value="">-- Selecciona una opción --</option>
+          <option value="op1">Opción 1</option>
+          <option value="op2">Opción 2</option>
+          <option value="op3">Opción 3</option>
+        </select>
+
+        <button type="button">Comprobar</button>
+
+        <p id="mensajeReto3" class="mensaje"></p>
+      </section>
+
+      <section id="pantalla-final" class="pantalla oculta">
+        <h2>¡Has escapado!</h2>
+        <p id="mensajeFinal">Has completado el juego.</p>
+        <button id="btn-reiniciar">Jugar otra vez</button>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <section class="pie_autores">
+        <h4>Creadores</h4>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/AlexJYad"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Alexander Yakovlev
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/pshecko"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Roman Dzhamalov
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/zookatt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ekaterina Zotova
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="pie__legal">
+        <p>&copy; 2026 Todos los derechos reservados</p>
+      </section>
+    </footer>
+  </body>
+</html>
