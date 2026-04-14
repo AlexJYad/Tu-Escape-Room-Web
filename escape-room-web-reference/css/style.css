@@ -1,0 +1,120 @@
+/* ===== ESTILOS GENERALES ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  min-height: 100vh;
+}
+
+.cabecera,
+.pie {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+/* ===== PANTALLAS ===== */
+.pantalla {
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.oculta {
+  display: none;
+}
+
+/* ===== ELEMENTOS ===== */
+h1,
+h2 {
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+input {
+  width: 100%;
+  max-width: 320px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mensaje {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* ===== FLEXBOX ===== */
+.lista-palabras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.palabra {
+  background-color: #e3eaf2;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tarjeta {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 600px) {
+  .contenedor {
+    width: 95%;
+  }
+
+  .pantalla {
+    padding: 18px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  input {
+    max-width: 100%;
+  }
+}

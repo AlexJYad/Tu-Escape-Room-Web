@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Room Web</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <h1>Escape Room Web</h1>
+    <p>Resuelve los retos para escapar</p>
+  </header>
+
+  <main class="contenedor">
+
+    <section id="pantalla-inicio" class="pantalla">
+      <h2>Bienvenido/a</h2>
+      <p>Estás atrapado en una web misteriosa. Supera los retos para escapar.</p>
+      <button id="btn-empezar">Empezar juego</button>
+    </section>
+
+    <section id="reto1" class="pantalla oculta">
+      <h2>Reto 1</h2>
+      <p>Aquí irá el primer reto.</p>
+      <input type="number" id="numeroJugador" placeholder="Escribe tu respuesta">
+      <button id="btn-reto1">Comprobar</button>
+      <p id="mensajeReto1" class="mensaje"></p>
+    </section>
+
+    <section id="reto2" class="pantalla oculta">
+      <h2>Reto 2</h2>
+      <p>Aquí irá el segundo reto.</p>
+      <div id="listaPalabras" class="lista-palabras">
+        <!-- Inserta aquí elementos desde JavaScript -->
+      </div>
+      <p id="mensajeReto2" class="mensaje"></p>
+    </section>
+
+    <section id="reto3" class="pantalla oculta">
+      <h2>Reto 3</h2>
+      <div class="tarjeta">
+        <p><strong>Nombre:</strong> <span id="nombrePersonaje"></span></p>
+        <p><strong>Edad:</strong> <span id="edadPersonaje"></span></p>
+        <p><strong>Profesión:</strong> <span id="profesionPersonaje"></span></p>
+      </div>
+      <p>Escribe aquí la respuesta final del reto:</p>
+      <input type="text" id="respuestaCiudad" placeholder="Tu respuesta">
+      <button id="btn-reto3">Responder</button>
+      <p id="mensajeReto3" class="mensaje"></p>
+    </section>
+
+    <section id="pantalla-final" class="pantalla oculta">
+      <h2>¡Has escapado!</h2>
+      <p id="mensajeFinal">Has completado el juego.</p>
+      <button id="btn-reiniciar">Jugar otra vez</button>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>Actividad de Lenguaje de Marcas</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
