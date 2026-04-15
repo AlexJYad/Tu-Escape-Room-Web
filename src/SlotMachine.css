@@ -1,0 +1,69 @@
+:root {
+   --slot-height: 50px;
+   --slot-ratio: 2/3;
+   --slot-count: 3;
+
+   /* 🟡 основной металл (латунь / золото) */
+   --slot-metal-base: rgb(180, 128, 15);
+
+   /* 🟠 светлый блик металла */
+   --slot-metal-highlight: rgb(220, 170, 60);
+
+   /* 🟤 тень металла (глубина) */
+   --slot-metal-shadow: rgb(90, 65, 10);
+
+   /* ⚫ основной фон корпуса (тёмный металл) */
+   --slot-body-bg: rgb(69, 62, 56);
+
+   /* ⚫ внутренняя тень (глубина слота) */
+   --slot-inner-shadow: rgba(0, 0, 0, 0.6);
+
+   /* ✨ акцент свечения цифр */
+   --slot-glow: rgba(180, 128, 15, 0.6);
+
+   --slot-text-color: rgba(210, 157, 43, 0.7);
+}
+
+.slots {
+   display: grid;
+   width: calc(var(--slot-height) * 2 / 3 * var(--slot-count));
+   grid-template-columns: repeat(var(--slot-count), 1fr);
+   padding: 1rem;
+   background: linear-gradient(
+      145deg,
+      var(--slot-metal-highlight),
+      var(--slot-metal-base),
+      var(--slot-metal-shadow)
+   );
+   align-items: center;
+}
+
+.slot {
+   height: var(--slot-height);
+   aspect-ratio: var(--slot-ratio);
+   background: linear-gradient(to bottom, var(--slot-body-bg), rgb(15, 15, 18));
+   overflow: hidden;
+
+   ul {
+      height: 100%;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: var(--slot-height);
+         font-size: var(--slot-height);
+         color: var(--slot-text-color);
+         text-shadow: 0 0 10px var(--slot-glow);
+         box-shadow:
+            inset 0 4px 6px var(--slot-inner-shadow),
+            inset 0 -4px 6px var(--slot-inner-shadow);
+      }
+   }
+   ul.trans {
+      transition: transform 0.3s ease;
+   }
+}
