@@ -1,200 +1,188 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Escape Room GTA</title>
-  </head>
-  <body>
-    <header class="cabecera">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <link rel="stylesheet" href="style.css">
+
+   <title>Escape Room GTA</title>
+</head>
+
+<body>
+   <header class="cabecera">
       <h1>Escape Room GTA: Golpe en Los Santos</h1>
       <p>
-        Completa los retos, desbloquea pistas y escapa de Los Santos sin que te
-        atrapen. ¿Tienes lo necesario para lograrlo?
+         Completa los retos, desbloquea pistas y escapa de Los Santos sin que te
+         atrapen. ¿Tienes lo necesario para lograrlo?
       </p>
-    </header>
+   </header>
 
-    <main class="contenedor">
+   <main class="contenedor">
       <section id="pantalla-inicio" class="pantalla">
-        <h2>Golpe en Los Santos</h2>
-        <p>
-          Robar era fácil… escapar es otra historia. Supera los retos y
-          demuestra que eres el rey de Los Santos.
-        </p>
-        <button id="btn-empezar">Empezar la mision</button>
+         <h2>Golpe en Los Santos</h2>
+         <p>
+            Robar era fácil… escapar es otra historia. Supera los retos y
+            demuestra que eres el rey de Los Santos.
+         </p>
+         <button id="btn-empezar">Empezar la mision</button>
       </section>
 
       <!-- Reto 1: Usuario introduce respuesta al input-->
 
-      <section id="reto1" class="pantalla oculta">
-        <h2>Reto 1: Arranca el coche</h2>
+      <section id="reto1" class="pantalla oculta" hidden>
+         <h2>Reto 1: Arranca el coche</h2>
 
-        <p>
-          El coche está bloqueado. Introduce el código correcto para arrancarlo.
-        </p>
+         <p>
+            El coche está bloqueado. Introduce el código correcto para arrancarlo.
+         </p>
 
-        <p>
-          Pista: El número de estrellas máximas de búsqueda multiplicado por
-          111.
-        </p>
+         <p>
+            Pista: El número de estrellas máximas de búsqueda multiplicado por
+            111.
+         </p>
 
-        <p id="togglePista1" style="cursor: pointer; color: blue">
-          Mostrar pista
-        </p>
+         <p id="togglePista1" style="cursor: pointer; color: blue">
+            Mostrar pista
+         </p>
 
-        <p id="pista1" class="oculta">
-          El número máximo de estrellas en GTA es 5
-        </p>
+         <p id="pista1" class="oculta">
+            El número máximo de estrellas en GTA es 5
+         </p>
 
-        <input
-          type="number"
-          id="numeroJugador"
-          placeholder="Introduce el código"
-        />
+         <input type="number" id="numeroJugador" placeholder="Introduce el código" />
 
-        <button id="btn-reto1">Comprobar</button>
+         <button id="btn-reto1">Comprobar</button>
 
-        <p id="mensajeReto1" class="mensaje"></p>
+         <p id="mensajeReto1" class="mensaje"></p>
       </section>
 
       <!-- Reto 2: Usuario elige una de las 4 botones con la respuesta correcta-->
-      <section id="reto2" class="pantalla oculta">
-        <h2>Reto 2: Hackea la caja fuerte</h2>
+      <section id="reto2" class="pantalla oculta" hidden>
+         <h2>Reto 2: Hackea la caja fuerte</h2>
 
-        <p>
-          Has entrado en el banco. Completa la secuencia para abrir la caja
-          fuerte.
-        </p>
+         <p>
+            Has entrado en el banco. Completa la secuencia para abrir la caja
+            fuerte.
+         </p>
 
-        <p>10 → 20 → 40 → ?</p>
+         <p>10 → 20 → 40 → ?</p>
 
-        <p id="togglePista2" style="cursor: pointer; color: blue">
-          Mostrar pista
-        </p>
+         <p id="togglePista2" style="cursor: pointer; color: blue">
+            Mostrar pista
+         </p>
 
-        <p id="pista2" class="oculta">
-          Cada número es el doble del anterior 😉
-        </p>
+         <p id="pista2" class="oculta">
+            Cada número es el doble del anterior 😉
+         </p>
 
-        <div class="opciones">
-          <button class="opcion-reto2" data-value="60">60</button>
-          <button class="opcion-reto2" data-value="80">80</button>
-          <button class="opcion-reto2" data-value="100">100</button>
-          <button class="opcion-reto2" data-value="120">120</button>
-        </div>
+         <div class="opciones">
+            <button class="opcion-reto2" data-value="60">60</button>
+            <button class="opcion-reto2" data-value="80">80</button>
+            <button class="opcion-reto2" data-value="100">100</button>
+            <button class="opcion-reto2" data-value="120">120</button>
+         </div>
 
-        <p id="mensajeReto2" class="mensaje"></p>
+         <p id="mensajeReto2" class="mensaje"></p>
       </section>
 
       <!-- Reto 3: Usuario elige una de las 3 opciones de select con la respuesta correcta-->
 
-      <section id="reto3" class="pantalla oculta">
-        <h2>Reto 3: Escapa de la policía</h2>
+      <section id="reto3" class="pantalla oculta" hidden>
+         <h2>Reto 3: Escapa de la policía</h2>
 
-        <p>Resuelve la adivinanza para perder el nivel de búsqueda.</p>
+         <p>Resuelve la adivinanza para perder el nivel de búsqueda.</p>
 
-        <p>
-          “Cuanto más corres, más te sigo. Si te escondes, desaparezco. ¿Qué
-          soy?”
-        </p>
+         <p>
+            “Cuanto más corres, más te sigo. Si te escondes, desaparezco. ¿Qué
+            soy?”
+         </p>
 
-        <p id="togglePista3" style="cursor: pointer; color: blue">
-          Mostrar pista
-        </p>
+         <p id="togglePista3" style="cursor: pointer; color: blue">
+            Mostrar pista
+         </p>
 
-        <p id="pista3" class="oculta">
-          Está relacionada con el nivel de búsqueda en GTA 🚨
-        </p>
+         <p id="pista3" class="oculta">
+            Está relacionada con el nivel de búsqueda en GTA 🚨
+         </p>
 
-        <figure>
-          <img
-            src="img/grafico.png"
-            alt="Nivel de búsqueda en la ciudad"
-            class="imagen-reto"
-          />
-          <figcaption>Situación de persecución</figcaption>
-        </figure>
+         <figure>
+            <img src="img/grafico.png" alt="Nivel de búsqueda en la ciudad" class="imagen-reto" />
+            <figcaption>Situación de persecución</figcaption>
+         </figure>
 
-        <label for="respuestaReto3">Elige una opción:</label>
+         <label for="respuestaReto3">Elige una opción:</label>
 
-        <select id="respuestaReto3">
-          <option value="">-- Selecciona una opción --</option>
-          <option value="policia">La policía</option>
-          <option value="trafico">El tráfico</option>
-          <option value="dinero">El dinero</option>
-        </select>
+         <select id="respuestaReto3">
+            <option value="">-- Selecciona una opción --</option>
+            <option value="policia">La policía</option>
+            <option value="trafico">El tráfico</option>
+            <option value="dinero">El dinero</option>
+         </select>
 
-        <button id="btn-reto3" type="button">Comprobar</button>
+         <button id="btn-reto3" type="button">Comprobar</button>
 
-        <p id="mensajeReto3" class="mensaje"></p>
+         <p id="mensajeReto3" class="mensaje"></p>
       </section>
 
-      <section id="pantalla-final-exito" class="pantalla oculta">
-        <h2>💸 ¡LEYENDA DE LOS SANTOS!</h2>
+      <section id="pantalla-final-exito" class="pantalla oculta" hidden>
+         <h2>💸 ¡LEYENDA DE LOS SANTOS!</h2>
 
-        <p id="mensajeFinal_exito">
-          Lo has hecho… Has robado el banco, esquivado a la poli y desaparecido
-          como un fantasma. Ahora Los Santos tiene una nueva leyenda… y la
-          policía todavía está buscando explicaciones.
-        </p>
+         <p id="mensajeFinal_exito">
+            Lo has hecho… Has robado el banco, esquivado a la poli y desaparecido
+            como un fantasma. Ahora Los Santos tiene una nueva leyenda… y la
+            policía todavía está buscando explicaciones.
+         </p>
 
-        <button id="btn-reiniciar-exito">
-          ¿Otra ronda o te has asustado? 🔁
-        </button>
+         <button id="btn-reiniciar-exito">
+            ¿Otra ronda o te has asustado? 🔁
+         </button>
       </section>
 
-      <section id="pantalla-final-wasted" class="pantalla oculta">
-        <h2>💀 WASTED</h2>
+      <section id="pantalla-final-wasted" class="pantalla oculta" hidden>
+         <h2>💀 WASTED</h2>
 
-        <p id="mensajeFinal_wasted">
-          Te has confiado demasiado… Un semáforo, una patrulla y tu mala suerte
-          han hecho equipo contra ti. Resultado: prisión con desayuno gratis
-          (sin wifi) 💀
-        </p>
+         <p id="mensajeFinal_wasted">
+            Te has confiado demasiado… Un semáforo, una patrulla y tu mala suerte
+            han hecho equipo contra ti. Resultado: prisión con desayuno gratis
+            (sin wifi) 💀
+         </p>
 
-        <button id="btn-reiniciar-wasted">
-          Intentarlo otra vez (si te atreves) 😈
-        </button>
+         <button id="btn-reiniciar-wasted">
+            Intentarlo otra vez (si te atreves) 😈
+         </button>
       </section>
-    </main>
+   </main>
 
-    <footer class="pie">
+   <footer class="pie">
       <section class="pie_autores">
-        <h4>Creadores</h4>
-        <ul>
-          <li>
-            <a
-              href="https://github.com/AlexJYad"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Alexander Yakovlev
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/pshecko"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Roman Dzhamalov
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/zookatt"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ekaterina Zotova
-            </a>
-          </li>
-        </ul>
+         <h4>Creadores</h4>
+         <ul>
+            <li>
+               <a href="https://github.com/AlexJYad" target="_blank" rel="noopener noreferrer">
+                  Alexander Yakovlev
+               </a>
+            </li>
+            <li>
+               <a href="https://github.com/pshecko" target="_blank" rel="noopener noreferrer">
+                  Roman Dzhamalov
+               </a>
+            </li>
+            <li>
+               <a href="https://github.com/zookatt" target="_blank" rel="noopener noreferrer">
+                  Ekaterina Zotova
+               </a>
+            </li>
+         </ul>
       </section>
 
       <section class="pie__legal">
-        <p>&copy; 2026 Todos los derechos reservados</p>
+         <p>&copy; 2026 Todos los derechos reservados</p>
       </section>
-    </footer>
-  </body>
+   </footer>
+
+   <script src="script.js"></script>
+</body>
+
 </html>
