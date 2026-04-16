@@ -1,17 +1,117 @@
+/* =========================
+   --------- RESET ---------
+   ========================= */
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
 }
 
-/* COLORS */
+ul {
+   list-style: none;
+}
+
+/* =========================
+   --------- ROOT ----------
+   ========================= */
+
+@font-face {
+   font-family: "Pricedown";
+   src: url("./src/fonts/pricedown.otf") format("opentype");
+   font-weight: 700;
+   font-style: normal;
+}
+
 :root {
-  --base-color: #bf9278;
-  --accent-dark: #a64f1c;
-  --accent-light: #f28b30;
-  --text-light: #fefefe;
-  --bg-light: #2a3a40;
-  --bg-dark: #182226;
+   /* COLORS */
+   --base-color: #bf9278;
+   --accent-dark: #a64f1c;
+   --accent-light: #f28b30;
+   --text-light: #fefefe;
+   --bg-light: #2a3a40;
+   --bg-dark: #182226;
+
+   /* размеры */
+   --main-widht: 402px;
+   --container-width: 362px;
+
+   /* отступы */
+   /* --spacing-S: 5px; */
+   --spacing-M: 20px;
+   /* --spacing-L: 35px; */
+
+   /* шрифты */
+   --font-main: Futura;
+   --font-size-base: 16px;
+
+   --font-h: Pricedown;
+   --font-size-h: 40px;
+   --font-weight-h: 900;
+
+   /* анимации */
+   --transition-fast: 0.2s ease;
+   --transition-normal: 0.3s ease;
+}
+
+body {
+   font-family: var(--font-main);
+   font-size: var(--font-size-base);
+   background-color: var(--bg-dark);
+   color: var(--base-color);
+}
+
+/* =========================
+   -------- LAYOUT ---------
+   ========================= */
+
+.contenedor {
+   max-width: var(--main-widht);
+   margin: 0 auto;
+   padding: 0 var(--spacing-M);
+}
+
+/* =========================
+   ------ COMPONENTS -------
+   ========================= */
+
+.button {
+   padding: var(--spacing-M);
+   background-color: var(--bg-dark);
+   gap: 10px;
+   border: solid 4px var(--base-color);
+   cursor: pointer;
+   transition: var(--transition-fast);
+   color: var(--base-color);
+   font-family: var(--font-h);
+   font-size: var(--font-size-h);
+}
+
+.button.fail {
+   border: solid 4px var(--accent-dark);
+   color: var(--accent-dark);
+}
+
+.button:hover {
+   opacity: 0.8;
+}
+
+/* =========================
+   ------- UTILITIES -------
+   ========================= */
+
+.hidden {
+   display: none !important;
+}
+
+.flex {
+   display: flex;
+}
+
+.center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
