@@ -77,6 +77,10 @@ body.body--reto1 {
   background-image: url(./assets/img/room1_bg.jpg);
 }
 
+body.body--exito {
+  background-image: url(./assets/img/exito.png);
+}
+
 /* =========================
    -------- LAYOUT ---------
    ========================= */
@@ -146,7 +150,8 @@ h1 {
   padding: var(--spacing-M);
   font-family: var(--font-main);
 }
-#btns-inicio {
+#btns-inicio,
+#btns-win {
   display: flex;
   justify-content: space-between;
   gap: var(--spacing-S);
@@ -181,4 +186,25 @@ footer {
 .pie_autores ul {
   display: flex;
   justify-content: space-between;
+}
+
+/* WINNING */
+
+#pantalla-final-exito h2 {
+  background-color: var(--bg-dark);
+  margin: var(--spacing-M) 0;
+  padding: var(--spacing-M) var(--spacing-L);
+  font-family: var(--font-h);
+  font-size: var(--font-size-h);
+  text-align: center;
+}
+#pantalla-final-exito p {
+  background-color: var(--bg-dark);
+  padding: var(--spacing-M);
+  font-family: var(--font-main);
+}
+#pantalla-final-exito {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-L);
 }
