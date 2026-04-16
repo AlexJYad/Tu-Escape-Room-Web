@@ -59,14 +59,16 @@ ul {
 body {
    font-family: var(--font-main);
    font-size: var(--font-size-base);
+   background-color: var(--bg-dark);
+   color: var(--base-color);
 }
 
 /* =========================
    -------- LAYOUT ---------
    ========================= */
 
-.container {
-   max-width: var(--container-width);
+.contenedor {
+   max-width: var(--main-widht);
    margin: 0 auto;
    padding: 0 var(--spacing-M);
 }
