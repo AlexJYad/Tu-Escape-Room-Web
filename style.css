@@ -159,6 +159,7 @@ h2 {
 }
 
 #btns-inicio,
+#btns-top,
 #btns-win {
    display: flex;
    justify-content: space-between;
@@ -187,8 +188,6 @@ h2 {
 .button-bottom {
    width: 100%;
 }
-
-/* style="cursor: pointer; color: blue" */
 
 /* FOOTER */
 .pie_autores,

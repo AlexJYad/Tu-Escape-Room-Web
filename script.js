@@ -28,8 +28,14 @@ btn.addEventListener("click", () => {
    setBodyBackground("reto1");
 });
 
-const btnReto1 = reto1.querySelector("button");
+const btnReto1 = document.getElementById("btn-reto1");
 btnReto1.addEventListener("click", testRetoUno);
+
+const btnRingar = document.getElementById("btn-rindo");
+btnRingar.addEventListener("click", () => {
+   reto1.setAttribute("hidden", true);
+   wasted.removeAttribute("hidden");
+});
 
 const btnSuccses = succses.querySelector("button");
 btnSuccses.addEventListener("click", () => {
