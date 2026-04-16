@@ -4,6 +4,12 @@ const succses = document.getElementById("pantalla-final-exito");
 const wasted = document.getElementById("pantalla-final-wasted");
 const togglePista1 = document.getElementById("togglePista1");
 const pista1 = document.getElementById("pista1");
+const body = document.body;
+
+function setBodyBackground(screenName) {
+  body.classList.remove("body--inicio", "body--reto1");
+  body.classList.add(`body--${screenName}`);
+}
 
 function testRetoUno() {
   if (machine.getValue() == 555) {
@@ -19,6 +25,7 @@ const btn = inicio.querySelector("button");
 btn.addEventListener("click", () => {
   inicio.setAttribute("hidden", true);
   reto1.removeAttribute("hidden");
+  setBodyBackground("reto1");
 });
 
 const btnReto1 = reto1.querySelector("button");
@@ -28,12 +35,14 @@ const btnSuccses = succses.querySelector("button");
 btnSuccses.addEventListener("click", () => {
   succses.setAttribute("hidden", true);
   inicio.removeAttribute("hidden");
+  setBodyBackground("inicio");
 });
 
 const btnWasted = wasted.querySelector("button");
 btnWasted.addEventListener("click", () => {
   wasted.setAttribute("hidden", true);
   inicio.removeAttribute("hidden");
+  setBodyBackground("inicio");
 });
 
 togglePista1.addEventListener("click", () => {
@@ -43,3 +52,5 @@ togglePista1.addEventListener("click", () => {
     pista1.setAttribute("hidden", true);
   }
 });
+
+setBodyBackground("inicio");
