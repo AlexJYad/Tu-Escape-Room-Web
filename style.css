@@ -157,35 +157,56 @@ h1 {
   gap: var(--spacing-S);
 }
 #info-inicio {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  gap: var(--spacing-S);
-  margin: var(--spacing-M);
+   display: flex;
+   justify-content: space-around;
+   text-align: center;
+   gap: var(--spacing-S);
+   margin: var(--spacing-M);
 }
 #info-inicio ul li:first-child {
-  font-family: var(--font-h);
-  font-size: var(--font-size-h);
+   font-family: var(--font-h);
+   font-size: var(--font-size-h);
 }
+
+/* Page 2 */
+
+#togglePista1 {
+   cursor: pointer;
+   color: var(--bg-light);
+}
+
+.button-bottom {
+   width: 100%;
+}
+
+/* style="cursor: pointer; color: blue" */
 
 /* FOOTER */
 .pie_autores,
 .pie__legal {
-  text-align: center;
-  margin: var(--spacing-S);
+   text-align: center;
+   margin: var(--spacing-S);
 }
+
 footer {
-  margin: var(--spacing-M) 0;
+   margin: var(--spacing-M) 0;
 }
 .pie_autores ul li a {
-  list-style: none;
-  text-decoration: none;
-  color: var(--base-color);
-  cursor: pointer;
+   list-style: none;
+   text-decoration: none;
+   color: var(--base-color);
+   cursor: pointer;
 }
 .pie_autores ul {
-  display: flex;
-  justify-content: space-between;
+   display: flex;
+   justify-content: space-between;
+}
+
+.pie {
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
 }
 
 /* WINNING */

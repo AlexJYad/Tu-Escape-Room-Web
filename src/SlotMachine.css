@@ -1,22 +1,24 @@
 :root {
-   --slot-height: var(--font-size-h);
+   --slot-height: 171px;
    --slot-ratio: 2 / 3;
    --slot-count: 3;
-   --slot-base: var(--accent-dark);
+   --slot-base: var(--base-color);
    /* ⚫ основной фон корпуса (тёмный металл) */
-   --slot-body-bg: rgb(69, 62, 56);
+   --slot-body-bg: var(--bg-light);
    /* ⚫ внутренняя тень (глубина слота) */
-   --slot-inner-shadow: rgba(0, 0, 0, 0.6);
+   --slot-inner-shadow: var(--bg-dark);
    /* ✨ акцент свечения цифр */
-   --slot-glow: var(--accent-light);
-   --slot-text-color: var(--accent-light);
+   --slot-glow: var(--base-color);
+   --slot-text-color: var(--base-color);
 }
 
 .slots {
    display: grid;
+   gap: var(--spacing-S);
+   margin: var(--spacing-M) 0;
    grid-template-columns: repeat(var(--slot-count), 1fr);
    width: calc(
-      var(--spacing-S) * 2 + var(--font-size-h) * var(--slot-ratio) *
+      var(--spacing-S) * 4 + var(--slot-height) * var(--slot-ratio) *
          var(--slot-count)
    );
    padding: var(--spacing-S);
@@ -44,10 +46,10 @@
          justify-content: center;
          align-items: center;
          height: var(--slot-height);
-         font-size: calc(var(--slot-height) - var(--spacing-S) * 2);
+         font-size: 96px;
          font-family: var(--font-h);
          color: var(--slot-text-color);
-         text-shadow: 0 0 10px var(--slot-glow);
+         text-shadow: 0 0 3px var(--slot-glow);
          box-shadow:
             inset 0 4px 6px var(--slot-inner-shadow),
             inset 0 -4px 6px var(--slot-inner-shadow);
