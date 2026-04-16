@@ -7,13 +7,14 @@ const pista1 = document.getElementById("pista1");
 const body = document.body;
 
 function setBodyBackground(screenName) {
-  body.classList.remove("body--inicio", "body--reto1");
+  body.classList.remove("body--inicio", "body--reto1", "body--exito");
   body.classList.add(`body--${screenName}`);
 }
 
 function testRetoUno() {
   if (machine.getValue() == 555) {
     succses.removeAttribute("hidden");
+    setBodyBackground("exito");
   } else {
     wasted.removeAttribute("hidden");
     console.log("machine.getValue()");
