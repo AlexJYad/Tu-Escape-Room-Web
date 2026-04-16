@@ -5,3 +5,13 @@
   margin: 0;
   padding: 0;
 }
+
+/* COLORS */
+:root {
+  --base-color: #bf9278;
+  --accent-dark: #a64f1c;
+  --accent-light: #f28b30;
+  --text-light: #fefefe;
+  --bg-light: #2a3a40;
+  --bg-dark: #182226;
+}
