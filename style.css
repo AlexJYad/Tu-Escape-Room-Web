@@ -77,7 +77,7 @@ body.body--reto1 {
 }
 
 body.body--exito {
-  background-image: url(./assets/img/exito.png);
+   background-image: url(./assets/img/exito.png);
 }
 
 /* =========================
@@ -160,9 +160,9 @@ h2 {
 
 #btns-inicio,
 #btns-win {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--spacing-S);
+   display: flex;
+   justify-content: space-between;
+   gap: var(--spacing-S);
 }
 
 #info-inicio {
@@ -221,20 +221,24 @@ footer {
 /* WINNING */
 
 #pantalla-final-exito h2 {
-  background-color: var(--bg-dark);
-  margin: var(--spacing-M) 0;
-  padding: var(--spacing-M) var(--spacing-L);
-  font-family: var(--font-h);
-  font-size: var(--font-size-h);
-  text-align: center;
+   background-color: var(--bg-dark);
+   margin: var(--spacing-M) 0;
+   padding: var(--spacing-M) var(--spacing-L);
+   font-family: var(--font-h);
+   font-size: var(--font-size-h);
+   text-align: center;
 }
 #pantalla-final-exito p {
-  background-color: var(--bg-dark);
-  padding: var(--spacing-M);
-  font-family: var(--font-main);
+   background-color: var(--bg-dark);
+   padding: var(--spacing-M);
+   font-family: var(--font-main);
 }
 #pantalla-final-exito {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-L);
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-L);
+}
+
+[hidden] {
+   display: none !important;
 }
