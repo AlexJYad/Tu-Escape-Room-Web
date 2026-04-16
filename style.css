@@ -94,7 +94,6 @@ footer,
 
 .button {
   padding: var(--spacing-S) var(--spacing-M);
-  margin: var(--spacing-M) 0;
   background-color: var(--bg-dark);
   gap: 10px;
   border: solid 4px var(--base-color);
@@ -151,4 +150,35 @@ h1 {
   display: flex;
   justify-content: space-between;
   gap: var(--spacing-S);
+}
+#info-inicio {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  gap: var(--spacing-S);
+  margin: var(--spacing-M);
+}
+#info-inicio ul li:first-child {
+  font-family: var(--font-h);
+  font-size: var(--font-size-h);
+}
+
+/* FOOTER */
+.pie_autores,
+.pie__legal {
+  text-align: center;
+  margin: var(--spacing-S);
+}
+footer {
+  margin: var(--spacing-M) 0;
+}
+.pie_autores ul li a {
+  list-style: none;
+  text-decoration: none;
+  color: var(--base-color);
+  cursor: pointer;
+}
+.pie_autores ul {
+  display: flex;
+  justify-content: space-between;
 }
