@@ -54,6 +54,7 @@ ul {
    /* анимации */
    --transition-fast: 0.2s ease;
    --transition-normal: 0.3s ease;
+   --transition-long: 5s infinite ease;
 }
 
 body {
@@ -268,8 +269,22 @@ h2 span {
    min-height: calc(100vh - 120px);
 }
 
-[hidden] {
-   display: none !important;
+@keyframes wasted {
+   0% {
+      transform: rotate(-5deg);
+   }
+   25% {
+      transform: scale(1.1);
+   }
+   50% {
+      transform: rotate(5deg);
+   }
+   75% {
+      transform: scale(1.1);
+   }
+   100% {
+      transform: rotate(-5deg);
+   }
 }
 
 /* WASTED */
@@ -280,9 +295,7 @@ h2 span {
    font-family: var(--font-h);
    font-size: var(--font-size-h);
    text-align: center;
-}
-
-#pantalla-final-wasted h2 {
+   animation: wasted var(--transition-long);
 }
 
 #pantalla-final-wasted p {
@@ -294,4 +307,8 @@ h2 span {
    display: flex;
    flex-direction: column;
    min-height: calc(100vh - 120px);
+}
+
+[hidden] {
+   display: none !important;
 }
