@@ -219,6 +219,7 @@ h2 span {
 }
 
 .button-bottom {
+   padding: var(--spacing-M) 0;
    width: 100%;
 }
 
