@@ -65,6 +65,8 @@ body {
   background-size: cover;
   min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Background image for rooms */
@@ -88,11 +90,12 @@ body.body--wasted {
    -------- LAYOUT ---------
    ========================= */
 
-footer,
 .contenedor {
   max-width: var(--main-widht);
   margin: 0 auto;
   padding: 0 var(--spacing-M);
+  flex: 1;
+  width: 100%;
 }
 
 /* =========================
@@ -147,7 +150,10 @@ h2 {
   font-size: var(--font-size-h);
   text-align: center;
 }
-
+h1 span {
+  color: var(--text-light);
+  -webkit-text-stroke: 3px var(--accent-dark);
+}
 .text-contenedor {
   background-color: var(--bg-dark);
   padding: var(--spacing-M);
@@ -164,7 +170,10 @@ h2 {
   padding: var(--spacing-M);
   font-family: var(--font-main);
 }
-
+#pantalla-inicio p span {
+  color: var(--accent-dark);
+  font-weight: var(--font-weight-h);
+}
 #btns-inicio,
 #btns-top,
 #btns-win,
@@ -195,6 +204,8 @@ h2 {
 #info-inicio ul li:first-child {
   font-family: var(--font-h);
   font-size: var(--font-size-h);
+  color: var(--text-light);
+  -webkit-text-stroke: 3px var(--accent-dark);
 }
 
 /* Page 2 */
@@ -209,17 +220,19 @@ h2 {
 }
 
 /* FOOTER */
+
+.pie {
+  margin-top: auto;
+  background-color: rgb(24 34 38 / 70%);
+  padding: var(--spacing-S);
+}
+
 .pie_autores,
 .pie__legal {
   text-align: center;
   margin: var(--spacing-S);
 }
 
-.pie {
-  margin: var(--spacing-S) 0;
-  background-color: rgb(24 34 38 / 70%);
-  padding: var(--spacing-S);
-}
 .pie_autores ul li a {
   list-style: none;
   text-decoration: none;
@@ -228,15 +241,8 @@ h2 {
 }
 .pie_autores ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-
-/* .pie {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-} */
 
 /* WINNING */
 
