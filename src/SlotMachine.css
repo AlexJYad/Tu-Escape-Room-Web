@@ -1,8 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
+
 :root {
-   --slot-height: 171px;
-   --slot-ratio: 2 / 3;
+   --slot-ratio: 2/3;
    --slot-count: 3;
-   --slot-base: var(--base-color);
+
+   --spacing-S: 5px;
+   --spacing-M: 20px;
+   --spacing-L: 35px;
+
+   --text-size-XL: 90px;
+
+   /* 🟡 основной металл (латунь / золото) */
+   --slot-metal-base: var(--base-color);
+   /* 🟠 светлый блик металла */
+   --slot-metal-highlight: var(--base-color);
+   /* 🟤 тень металла (глубина) */
+   --slot-metal-shadow: var(--base-color);
    /* ⚫ основной фон корпуса (тёмный металл) */
    --slot-body-bg: var(--bg-light);
    /* ⚫ внутренняя тень (глубина слота) */
@@ -13,17 +26,18 @@
 }
 
 .slots {
+   width: 100%;
    display: grid;
-   gap: var(--spacing-S);
-   margin: var(--spacing-M) 0;
    grid-template-columns: repeat(var(--slot-count), 1fr);
-   width: calc(
-      var(--spacing-S) * 4 + var(--slot-height) * var(--slot-ratio) *
-         var(--slot-count)
-   );
    padding: var(--spacing-S);
-   background: var(--slot-base);
+   background: linear-gradient(
+      145deg,
+      var(--slot-metal-highlight),
+      var(--slot-metal-base),
+      var(--slot-metal-shadow)
+   );
    align-items: center;
+   margin: var(--spacing-M) 0;
 
    -webkit-user-select: none; /* Chrome, Safari, Opera */
    -moz-user-select: none; /* Firefox */
@@ -32,24 +46,31 @@
 }
 
 .slot {
-   height: var(--slot-height);
    aspect-ratio: var(--slot-ratio);
    background: linear-gradient(to bottom, var(--slot-body-bg), rgb(15, 15, 18));
    overflow: hidden;
+   margin: 0;
+   padding: 0;
 
    ul {
       height: 100%;
-      list-style-type: none;
+      user-select: none;
+      margin: 0;
+      padding: 0;
 
       li {
+         height: 100%;
+         user-select: none;
          display: flex;
          justify-content: center;
          align-items: center;
-         height: var(--slot-height);
-         font-size: 96px;
-         font-family: var(--font-h);
-         color: var(--slot-text-color);
-         text-shadow: 0 0 3px var(--slot-glow);
+         font-size: var(--text-size-XL);
+         font-family: "Ultra", var(--font-h);
+         color: #f03f30;
+         -webkit-text-stroke: 3px #ffe786;
+         text-shadow:
+            0 0 3px var(--slot-glow),
+            4px 4px 0 black;
          box-shadow:
             inset 0 4px 6px var(--slot-inner-shadow),
             inset 0 -4px 6px var(--slot-inner-shadow);

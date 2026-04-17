@@ -1,14 +1,12 @@
+const slots = document.querySelector(".slots");
 const styles = getComputedStyle(document.documentElement);
-const slotHeight = parseFloat(styles.getPropertyValue("--slot-height"));
 const slotCount = parseFloat(styles.getPropertyValue("--slot-count"));
 
-const slots = document.querySelector(".slots");
-
 class Slot {
-   constructor(height) {
+   constructor() {
       this.value = 0;
       this.ul;
-      this.height = height;
+      this.height;
       this.root;
    }
 
@@ -33,18 +31,25 @@ class Slot {
    }
 
    onClick() {
+      this.height = this.ul.querySelector("li").getBoundingClientRect().height;
+
+      console.log(this.height, " ", this.value);
       this.value++;
       this.ul.style.transform = `translateY(-${this.value * this.height}px)`;
+   }
+
+   resetToZero() {
+      this.value = 0;
+      this.ul.classList.remove("trans");
+      this.ul.style.transform = `translateY(0px)`;
+      this.ul.offsetHeight;
+      this.ul.classList.add("trans");
    }
 
    reset(e) {
       if (e.propertyName !== "transform") return;
       if (this.value >= 10) {
-         this.ul.classList.remove("trans");
-         this.ul.style.transform = `translateY(0px)`;
-         this.ul.offsetHeight;
-         this.ul.classList.add("trans");
-         this.value = 0;
+         this.resetToZero();
          return;
       }
       return;
@@ -56,16 +61,15 @@ class Slot {
 }
 
 class SlotMachine {
-   constructor(container, count = 4, height = 240) {
+   constructor(container, count = 4) {
       this.container = container;
       this.slots = [];
       this.count = count;
-      this.height = height;
    }
 
    init() {
       for (let i = 0; i < this.count; i++) {
-         const slot = new Slot(this.height);
+         const slot = new Slot();
          slot.init();
          slot.mount(this.container);
          this.slots.push(slot);
@@ -75,10 +79,11 @@ class SlotMachine {
    getValue() {
       return Number(this.slots.map((slot) => slot.getValue()).join(""));
    }
+
+   resetValue() {
+      this.slots.forEach((slot) => slot.resetToZero());
+   }
 }
 
-const machine = new SlotMachine(slots, slotCount, slotHeight);
+const machine = new SlotMachine(slots, slotCount);
 machine.init();
-
-// const btn = document.querySelector("button");
-// btn.addEventListener("click", () => console.log(machine.getValue()));
