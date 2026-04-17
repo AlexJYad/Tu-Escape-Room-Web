@@ -1,90 +1,80 @@
-# 🧩 Escape Room Web Project
+# Escape Room Web
 
-## 🇪🇸 Descripción del proyecto
+## Descripcion del proyecto
 
-Aplicación web en formato escape room (juego de escape), donde el jugador resuelve una serie de desafíos para llegar al final.
+Escape Room Web es una experiencia interactiva inspirada en el universo de GTA. El jugador debe completar varios retos para escapar de Los Santos antes de que se acabe el tiempo. A lo largo de la partida tendra que descifrar codigos, resolver pruebas logicas y tomar decisiones mientras avanza por una historia breve con ambientacion visual y sonora.
 
-El proyecto está creado con fines educativos para practicar:
+Este proyecto ha sido desarrollado con fines educativos para practicar:
 
 - HTML
-- CSS (Flexbox, responsive)
-- JavaScript (DOM, lógica, estructuras de datos)
+- CSS responsive
+- JavaScript y manipulacion del DOM
+- Diseno de interfaces y narrativa interactiva
 
----
+## Описание проекта (RU)
 
-## 🇷🇺 Описание проекта
-
-Веб-приложение в формате escape room (квест), где игрок проходит серию заданий, чтобы дойти до финала.
+Escape Room Web — это интерактивная игра в стиле GTA, в которой игроку нужно пройти несколько испытаний, чтобы выбраться из Лос-Сантоса до истечения времени. По ходу игры нужно разгадывать коды, решать логические задачи и продвигаться по короткому сюжету с визуальной и звуковой атмосферой.
 
 Проект создан в учебных целях для практики:
 
 - HTML
-- CSS (Flexbox, адаптив)
-- JavaScript (DOM, логика, структуры данных)
+- Адаптивного CSS
+- JavaScript и работы с DOM
+- Дизайна интерфейсов и интерактивного повествования
+
+## Demo
+
+GitHub Pages: https://alexjyad.github.io/Tu-Escape-Room-Web/
 
 ---
 
-# 🚀 Funcionalidad / Функционал
+## Funcionalidades
 
-## 🇪🇸
-
-- Pantalla de inicio
-- Pantalla de juego con desafíos
-- Retos lógicos
-- Interacción con el DOM
-- Pantalla final con resultado
-
-## 🇷🇺
-
-- Стартовый экран
-- Экран игры с заданиями
-- Логические челленджи
-- DOM-взаимодействие
-- Финальный экран с результатом
+- Pantalla de inicio con contexto narrativo
+- Retos interactivos con pistas
+- Logica de juego en JavaScript
+- Cambios visuales segun el progreso del jugador
+- Pantallas finales de exito o derrota
+- Musica para reforzar la ambientacion
 
 ---
 
-# 🛠️ Tecnologías / Технологии
+## Tecnologias
 
 - HTML5
-- CSS3 (Flexbox)
-- JavaScript (Vanilla JS)
+- CSS3
+- JavaScript
 
 ---
 
-# 📁 Estructura del proyecto / Структура проекта
+## Estructura del proyecto
 
+```text
 /project
-│── index.html
-│── style.css
-│── script.js
-│── /assets
+|-- index.html
+|-- style.css
+|-- script.js
+|-- /assets
+|-- /src
+```
 
 ---
 
-# 👥 Equipo / Команда
+## Equipo
 
-- Game Designer: **\_\_\_\_**
-- UX/UI: **\_\_\_\_**
-- HTML & CSS: **\_\_\_\_**
-- JavaScript: **\_\_\_\_**
-
----
-
-# ▶️ Cómo ejecutar / Как запустить
-
-## 🇪🇸
-
-1. Descargar o clonar el repositorio
-2. Abrir index.html en el navegador
-
-## 🇷🇺
-
-1. Скачать или клонировать репозиторий
-2. Открыть index.html в браузере
+- UX/UI y Game Design: **Roman Dzhamalov**
+- HTML, CSS y Game Design: **Ekaterina Zotova**
+- JavaScript y Game Design: **Alexander Yakovlev**
 
 ---
 
-# 📌 Estado del proyecto / Статус проекта
+## Como ejecutar
 
-🚧 En desarrollo / В разработке
+1. Clona o descarga este repositorio.
+2. Abre `index.html` en tu navegador.
+
+---
+
+## Estado del proyecto
+
+En desarrollo.
