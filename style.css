@@ -33,7 +33,7 @@ ul {
   --text-light: #fefefe;
   --bg-light: #2a3a40;
   --bg-dark: #182226;
-
+  --danger-red: #f03f30;
   /* размеры */
   --main-widht: 402px;
   --container-width: 362px;
@@ -49,6 +49,7 @@ ul {
   --font-size-medium: 24px;
   --font-h: Pricedown;
   --font-size-h: 40px;
+  --font-size-large: 50px;
   --font-weight-h: 900;
 
   /* анимации */
@@ -60,7 +61,7 @@ ul {
 body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
-  color: var(--base-color);
+  color: var(--text-light);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -294,10 +295,12 @@ h2 span {
 /* WASTED */
 #pantalla-final-wasted h2 {
   background-color: var(--bg-dark);
+  -webkit-text-stroke: 1px var(--text-light);
+  color: var(--danger-red);
   margin: var(--spacing-M) 0;
   padding: var(--spacing-M) var(--spacing-L);
   font-family: var(--font-h);
-  font-size: var(--font-size-h);
+  font-size: var(--font-size-large);
   text-align: center;
   animation: wasted var(--transition-long);
 }
