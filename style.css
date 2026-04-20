@@ -80,6 +80,14 @@ body.body--reto1 {
   background-image: url(./assets/img/room1_bg.jpg);
 }
 
+body.body--reto2 {
+  background-image: url(./assets/img/room2_bg.jpg);
+}
+
+body.body--reto3 {
+  background-image: url(./assets/img/room3_bg.jpg);
+}
+
 body.body--exito {
   background-image: url(./assets/img/exito.png);
 }
@@ -158,8 +166,9 @@ h2 span {
   -webkit-text-stroke: 3px var(--accent-dark);
 }
 .text-contenedor {
-  background-color: var(--bg-dark);
+  background-color: rgb(24 34 38 / 70%);
   padding: var(--spacing-M);
+  margin: var(--spacing-S) 0;
   font-family: var(--font-main);
   display: flex;
   flex-direction: column;
@@ -174,9 +183,10 @@ h2 span {
   font-family: var(--font-main);
 }
 #pantalla-inicio p span,
-.pista {
+.pista,
+#pista2.oculta,
+#pista3.oculta {
   color: var(--accent-dark);
-  font-weight: var(--font-weight-h);
 }
 #btns-inicio,
 #btns-top,
@@ -217,14 +227,59 @@ h2 span {
 
 /* Page 2 */
 
-#togglePista1 {
+#togglePista1,
+#togglePista2,
+#togglePista3 {
   cursor: pointer;
   color: var(--bg-light);
 }
+.opciones {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--spacing-M) 0;
+}
 
+.opcion-reto2 {
+  padding: var(--spacing-M);
+}
 .button-bottom {
   padding: var(--spacing-M) 0;
   width: 100%;
+}
+/* Page 3 */
+#btn-reto3 {
+  margin: var(--spacing-S) 0;
+  width: 100%;
+  padding: var(--spacing-M);
+  font-family: var(--font-h);
+  font-size: var(--font-size-medium);
+}
+
+.opciones-reto3 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-S);
+}
+
+.opciones-reto3 label {
+  color: var(--base-color);
+  font-family: var(--font-h);
+  font-size: var(--font-size-medium);
+  border: 2px solid var(--base-color);
+  padding: var(--spacing-M) var(--spacing-S);
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--base-color);
+  border-radius: 50%;
+  background: transparent;
+}
+
+input[type="radio"]:checked {
+  background: var(--accent-dark);
 }
 
 /* FOOTER */

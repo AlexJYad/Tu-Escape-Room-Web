@@ -52,7 +52,7 @@
 
       <section id="reto1" class="pantalla oculta" hidden>
          <div id="btns-top">
-            <button id="btn-rindo" class="button fail">Me rindo!</button>
+            <button class="button fail btn-rindo" type="button">Me rindo!</button>
             <button class="button btn-music" type="button" aria-label="Apagar musica">
                <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
             </button>
@@ -81,23 +81,29 @@
 
       <!-- Reto 2: Usuario elige una de las 4 botones con la respuesta correcta-->
       <section id="reto2" class="pantalla oculta" hidden>
-         <h2>Reto 2: Hackea la caja fuerte</h2>
+         <div id="btns-top">
+            <button class="button fail btn-rindo" type="button">Me rindo!</button>
+            <button class="button btn-music" type="button" aria-label="Apagar musica">
+               <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
+            </button>
+         </div>
+         <h2>Reto 2: <span>Hackea la caja fuerte</span></h2>
+         <div class="text-contenedor">
+            <p>
+               Has entrado en el banco. Completa la secuencia para abrir la caja
+               fuerte.
+            </p>
 
-         <p>
-            Has entrado en el banco. Completa la secuencia para abrir la caja
-            fuerte.
-         </p>
+            <p>10 → 20 → 40 → ?</p>
 
-         <p>10 → 20 → 40 → ?</p>
+            <p id="togglePista2">
+               Mostrar pista
+            </p>
 
-         <p id="togglePista2" style="cursor: pointer; color: blue">
-            Mostrar pista
-         </p>
-
-         <p id="pista2" class="oculta">
-            Cada número es el doble del anterior 😉
-         </p>
-
+            <p id="pista2" class="oculta">
+               Cada número es el doble del anterior
+            </p>
+         </div>
          <div class="opciones">
             <button class="button opcion-reto2" data-value="60">60</button>
             <button class="button opcion-reto2" data-value="80">80</button>
@@ -111,37 +117,47 @@
       <!-- Reto 3: Usuario elige una de las 3 opciones de select con la respuesta correcta-->
 
       <section id="reto3" class="pantalla oculta" hidden>
-         <h2>Reto 3: Escapa de la policía</h2>
+         <div id="btns-top">
+            <button class="button fail btn-rindo" type="button">Me rindo!</button>
+            <button class="button btn-music" type="button" aria-label="Apagar musica">
+               <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
+            </button>
+         </div>
+         <h2>Reto 3:<span> Escapa de la policía</span> </h2>
+         <div class="text-contenedor">
+            <p>Resuelve la adivinanza para perder el nivel de búsqueda.</p>
 
-         <p>Resuelve la adivinanza para perder el nivel de búsqueda.</p>
+            <p>
+               “Cuanto más corres, más te sigo. Si te escondes, desaparezco. ¿Qué
+               soy?”
+            </p>
 
-         <p>
-            “Cuanto más corres, más te sigo. Si te escondes, desaparezco. ¿Qué
-            soy?”
-         </p>
+            <p id="togglePista3">
+               Mostrar pista
+            </p>
 
-         <p id="togglePista3" style="cursor: pointer; color: blue">
-            Mostrar pista
-         </p>
+            <p id="pista3" class="oculta">
+               Está relacionada con el nivel de búsqueda en GTA
+            </p>
+         </div>
+         <div class="text-contenedor">
+            <p>Elige una opción:</p>
 
-         <p id="pista3" class="oculta">
-            Está relacionada con el nivel de búsqueda en GTA 🚨
-         </p>
-
-         <figure>
-            <img src="img/grafico.png" alt="Nivel de búsqueda en la ciudad" class="imagen-reto" />
-            <figcaption>Situación de persecución</figcaption>
-         </figure>
-
-         <label for="respuestaReto3">Elige una opción:</label>
-
-         <select id="respuestaReto3">
-            <option value="">-- Selecciona una opción --</option>
-            <option value="policia">La policía</option>
-            <option value="trafico">El tráfico</option>
-            <option value="dinero">El dinero</option>
-         </select>
-
+            <div class="opciones opciones-reto3">
+               <label>
+                  <input type="radio" name="respuestaReto3" value="policia" />
+                  La policía
+               </label>
+               <label>
+                  <input type="radio" name="respuestaReto3" value="trafico" />
+                  El tráfico
+               </label>
+               <label>
+                  <input type="radio" name="respuestaReto3" value="dinero" />
+                  El dinero
+               </label>
+            </div>
+         </div>
          <button id="btn-reto3" class="button" type="button">Comprobar</button>
 
          <p id="mensajeReto3" class="mensaje"></p>
