@@ -1,236 +1,276 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/SlotMachine.css" />
+    <style type="text/css">
+      body {
+        cursor:
+          url("data:image/x-icon;base64,AAACAAEAICAAAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgYDuhoGA/8aBgP/GgYD/xoGA/8aBgP/GgYD/xoGA/8aBgP/GgYDugAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoGAwYaBgPe6urq/+bm5v/i4uL/39/f/9vb2//Y2Nj/1dXV/9PT0/8aBgPhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgYDYxoGA4fu7u7/6urq/+bm5v/i4uL/39/f/9vb2//Y2Nj/1dXV/xoGA94aBgMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoGAwYaBgPex8LC//Hx8f/u7u7/6urq/+bm5v/i4uL/39/f/9vb2//Y2Nj/GgYDhxoGA4cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgYDYxoGA7T4+Pj/7u7u//Hx8f/u7u7/7u7u/+Li4v/i4uL/4uLi/9vb2/+wrKv/GgYD1QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoGAwYaBgPezcnI//v7+//u7u7/7u7u/+7u7v/u7u7/4uLi/+Li4v/i4uL/39/f/9vb2/8aBgPeGgYDMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgYDYxoGA7T//////f39///////u7u7/7u7u/+7u7v/u7u7/4uLi/+Li4v/i4uL/39/f/xoGA4caBgOHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaBgPez8rK/v///////////////+7u7v/u7u7/7u7u/+7u7v/u7u7/4uLi/+bm5v/i4uL/tbGw/xoGA9UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgYDYxoGA7T/////z8rK/v//////////////////////////7u7u/+7u7v/u7u7/7u7u/+bm5v/i4uL/GgYD/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoGAzYaBgO66Obl//////+Ge3r/////////////////////////////////7u7u/+7u7v/u7u7/6urq/+bm5v8aBgP/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgYDuujm5f///////////xoGA////////////////////////f39//v7+//4+Pj/9fX1//Hx8f/u7u7/6urq/xoGA/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaBgP/6Obl/+jm5f8aBgO6GgYD/////////////////////////////f39//v7+//4+Pj/GgYD//Hx8f/u7u7/GgYD/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoGA7oaBgP/GgYDuhoGAzYaBgP///////////8aBgP///////////8aBgP//f39//v7+/8aBgP/9fX1/8O/v/8aBgO6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoGA////////////xoGA////////////xoGA////////f39/xoGA//JxcT/GgYDuhoGAxoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgYD/8/Kyv//////GgYD////////////GgYD///////Pysr/GgYD/xoGA7oaBgMaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaBgM2GgYDuhoGA/8aBgP///////////8aBgP/GgYD/xoGA7oaBgM2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoGA////////////xoGA/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgYD////////////GgYD/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaBgP///////////8aBgP/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABoGA////////////xoGA/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGgYD////////////GgYD/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaBgM2GgYD/xoGA7oaBgM2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////////////////////////////////////////////////gB///4Af//+AH///AA///wAP//4AD//+AAf//AAH//wAB//4AAf/8AAH//AAB//xAAf//wAP//8AH///gH///+H////h////4f///+H////h////8///8="),
+          auto;
+      }
+    </style>
+    <title>Escape Room GTA</title>
+  </head>
 
-   <link rel="stylesheet" href="style.css" />
-   <link rel="stylesheet" href="src/SlotMachine.css" />
-
-   <title>Escape Room GTA</title>
-</head>
-
-<body>
-   <main class="contenedor">
+  <body>
+    <main class="contenedor">
       <section id="pantalla-inicio" class="pantalla">
-         <h1>Escape Room: <span>Golpe en Los Santos</span></h1>
-         <p>
-            El reloj corre y la presión aumenta. Has dado el golpe del siglo… pero
-            la policía de Los Santos, el FIB y todos los policías corruptos desde
-            Vice City hasta Liberty City te pisan los talones. ¿Tu única salida?
-            Demostrar que conoces las calles mejor que nadie.</br> Responde preguntas,
-            descifra códigos y huye de la ley a través de cinco distritos llenos
-            de caos. </br> Mantente alerta, sigue en movimiento y
-            recuerda: en esta ciudad, el conocimiento es el único coche de escape
-            que nunca se queda sin gasolina. </br><span>Piensa rápido. Conduce más rápido.
-               Escapa.</span>
-         </p>
-         <div id="info-inicio">
-            <ul>
-               <li>3</li>
-               <li>Retos</li>
-            </ul>
-            <ul>
-               <li>5</li>
-               <li>Minutos</li>
-            </ul>
-            <ul>
-               <li>AR</li>
-               <li>Experiencia</li>
-            </ul>
-         </div>
-         <div id="btns-inicio">
-            <button id="btn-empezar" class="button">Empezar la mision</button>
-            <button class="button btn-music" type="button" aria-label="Apagar musica">
-               <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
-            </button>
-         </div>
+        <h1>Escape Room: <span>Golpe en Los Santos</span></h1>
+        <div class="parrafos-inicio">
+          <p>
+            El reloj corre y la presión aumenta. Has dado el golpe del siglo…
+            pero la policía de Los Santos, el FIB y todos los policías corruptos
+            desde Vice City hasta Liberty City te pisan los talones. ¿Tu única
+            salida? Demostrar que conoces las calles mejor que nadie. Responde
+            preguntas, descifra códigos y huye de la ley a través de cinco
+            distritos llenos de caos.
+          </p>
+          <p>
+            Mantente alerta, sigue en movimiento y recuerda: en esta ciudad, el
+            conocimiento es el único coche de escape que nunca se queda sin
+            gasolina.
+          </p>
+          <p>Piensa rápido. Conduce más rápido. Escapa.</p>
+        </div>
+        <div id="info-inicio">
+          <ul>
+            <li>3</li>
+            <li>Retos</li>
+          </ul>
+          <ul>
+            <li>5</li>
+            <li>Minutos</li>
+          </ul>
+          <ul>
+            <li>AR</li>
+            <li>Experiencia</li>
+          </ul>
+        </div>
+        <div id="btns-inicio">
+          <button id="btn-empezar" class="button">Empezar la mision</button>
+          <button
+            class="button btn-music"
+            type="button"
+            aria-label="Apagar musica"
+          >
+            <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
+          </button>
+        </div>
       </section>
 
       <!-- Reto 1: Usuario introduce respuesta al input-->
 
       <section id="reto1" class="pantalla oculta" hidden>
-         <div id="btns-top">
-            <button class="button fail btn-rindo" type="button">Me rindo!</button>
-            <button class="button btn-music" type="button" aria-label="Apagar musica">
-               <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
-            </button>
-         </div>
-         <h2>Reto 1: <span>Arranca el coche</span></h2>
-         <div class="text-contenedor">
-            <p>
-               El coche está bloqueado. Introduce el código correcto para arrancarlo.
-            </p>
+        <div id="btns-top">
+          <button class="button fail btn-rindo" type="button">Me rindo!</button>
+          <button
+            class="button btn-music"
+            type="button"
+            aria-label="Apagar musica"
+          >
+            <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
+          </button>
+        </div>
+        <h2>Reto 1: <span>Arranca el coche</span></h2>
+        <div class="text-contenedor">
+          <p>
+            El coche está bloqueado. Introduce el código correcto para
+            arrancarlo.
+          </p>
 
-            <p>El número de estrellas máximas de búsqueda multiplicado por 111.</p>
+          <p>
+            El número de estrellas máximas de búsqueda multiplicado por 111.
+          </p>
 
-            <p id="togglePista1">
-               Mostrar pista
-            </p>
+          <p id="togglePista1">Mostrar pista</p>
 
-            <p id="pista1" class="pista" hidden>El número máximo de estrellas en GTA es 5</p>
-         </div>
-         <div class="slots"></div>
+          <p id="pista1" class="pista" hidden>
+            El número máximo de estrellas en GTA es 5
+          </p>
+        </div>
+        <div class="slots"></div>
 
-         <button id="btn-reto1" class="button button-bottom">Comprobar</button>
+        <button id="btn-reto1" class="button button-bottom">Comprobar</button>
 
-         <p id="mensajeReto1" class="mensaje"></p>
-
+        <p id="mensajeReto1" class="mensaje"></p>
       </section>
 
       <!-- Reto 2: Usuario elige una de las 4 botones con la respuesta correcta-->
       <section id="reto2" class="pantalla oculta" hidden>
-         <div id="btns-top">
-            <button class="button fail btn-rindo" type="button">Me rindo!</button>
-            <button class="button btn-music" type="button" aria-label="Apagar musica">
-               <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
-            </button>
-         </div>
-         <h2>Reto 2: <span>Hackea la caja fuerte</span></h2>
-         <div class="text-contenedor">
-            <p>
-               Has entrado en el banco. Completa la secuencia para abrir la caja
-               fuerte.
-            </p>
+        <div id="btns-top">
+          <button class="button fail btn-rindo" type="button">Me rindo!</button>
+          <button
+            class="button btn-music"
+            type="button"
+            aria-label="Apagar musica"
+          >
+            <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
+          </button>
+        </div>
+        <h2>Reto 2: <span>Hackea la caja fuerte</span></h2>
+        <div class="text-contenedor">
+          <p>
+            Has entrado en el banco. Completa la secuencia para abrir la caja
+            fuerte.
+          </p>
 
-            <p>10 → 20 → 40 → ?</p>
+          <p>10 → 20 → 40 → ?</p>
 
-            <p id="togglePista2">
-               Mostrar pista
-            </p>
+          <p id="togglePista2">Mostrar pista</p>
 
-            <p id="pista2" class="oculta">
-               Cada número es el doble del anterior
-            </p>
-         </div>
-         <div class="opciones">
-            <button class="button opcion-reto2" data-value="60">60</button>
-            <button class="button opcion-reto2" data-value="80">80</button>
-            <button class="button opcion-reto2" data-value="100">100</button>
-            <button class="button opcion-reto2" data-value="120">120</button>
-         </div>
+          <p id="pista2" class="oculta">Cada número es el doble del anterior</p>
+        </div>
+        <div class="opciones">
+          <button class="button opcion-reto2" data-value="60">60</button>
+          <button class="button opcion-reto2" data-value="80">80</button>
+          <button class="button opcion-reto2" data-value="100">100</button>
+          <button class="button opcion-reto2" data-value="120">120</button>
+        </div>
 
-         <p id="mensajeReto2" class="mensaje"></p>
+        <p id="mensajeReto2" class="mensaje"></p>
       </section>
 
       <!-- Reto 3: Usuario elige una de las 3 opciones de select con la respuesta correcta-->
 
       <section id="reto3" class="pantalla oculta" hidden>
-         <div id="btns-top">
-            <button class="button fail btn-rindo" type="button">Me rindo!</button>
-            <button class="button btn-music" type="button" aria-label="Apagar musica">
-               <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
-            </button>
-         </div>
-         <h2>Reto 3:<span> Escapa de la policía</span> </h2>
-         <div class="text-contenedor">
-            <p>Resuelve la adivinanza para perder el nivel de búsqueda.</p>
+        <div id="btns-top">
+          <button class="button fail btn-rindo" type="button">Me rindo!</button>
+          <button
+            class="button btn-music"
+            type="button"
+            aria-label="Apagar musica"
+          >
+            <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
+          </button>
+        </div>
+        <h2>Reto 3:<span> Escapa de la policía</span></h2>
+        <div class="text-contenedor">
+          <p>Resuelve la adivinanza para perder el nivel de búsqueda.</p>
 
-            <p>
-               “Cuanto más corres, más te sigo. Si te escondes, desaparezco. ¿Qué
-               soy?”
-            </p>
+          <p>
+            “Cuanto más corres, más te sigo. Si te escondes, desaparezco. ¿Qué
+            soy?”
+          </p>
 
-            <p id="togglePista3">
-               Mostrar pista
-            </p>
+          <p id="togglePista3">Mostrar pista</p>
 
-            <p id="pista3" class="oculta">
-               Está relacionada con el nivel de búsqueda en GTA
-            </p>
-         </div>
-         <div class="text-contenedor">
-            <p>Elige una opción:</p>
+          <p id="pista3" class="oculta">
+            Está relacionada con el nivel de búsqueda en GTA
+          </p>
+        </div>
+        <div class="text-contenedor radio-btns">
+          <p>Elige una opción:</p>
 
-            <div class="opciones opciones-reto3">
-               <label>
-                  <input type="radio" name="respuestaReto3" value="policia" />
-                  La policía
-               </label>
-               <label>
-                  <input type="radio" name="respuestaReto3" value="trafico" />
-                  El tráfico
-               </label>
-               <label>
-                  <input type="radio" name="respuestaReto3" value="dinero" />
-                  El dinero
-               </label>
-            </div>
-         </div>
-         <button id="btn-reto3" class="button" type="button">Comprobar</button>
+          <div class="opciones opciones-reto3">
+            <label>
+              <input type="radio" name="respuestaReto3" value="policia" />
+              La policía
+            </label>
+            <label>
+              <input type="radio" name="respuestaReto3" value="trafico" />
+              El tráfico
+            </label>
+            <label>
+              <input type="radio" name="respuestaReto3" value="dinero" />
+              El dinero
+            </label>
+          </div>
+        </div>
+        <button id="btn-reto3" class="button" type="button">Comprobar</button>
 
-         <p id="mensajeReto3" class="mensaje"></p>
+        <p id="mensajeReto3" class="mensaje"></p>
       </section>
 
       <section id="pantalla-final-exito" class="pantalla oculta" hidden>
-         <h2>HAS ESCAPADO!</h2>
+        <h2>HAS ESCAPADO!</h2>
 
-         <p id="mensajeFinal_exito">
-            Lo has hecho… Has robado el banco, esquivado a la poli y desaparecido
-            como un fantasma. Ahora Los Santos tiene una nueva leyenda… y la
-            policía todavía está buscando explicaciones.
-         </p>
-         <div id="btns-win">
-            <button id="btn-reiniciar-exito" class="button">
-               ¿Otra ronda o te has asustado?
-            </button>
-            <button class="button btn-music" type="button" aria-label="Apagar musica">
-               <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
-            </button>
-         </div>
+        <p id="mensajeFinal_exito">
+          Lo has hecho… Has robado el banco, esquivado a la poli y desaparecido
+          como un fantasma. Ahora Los Santos tiene una nueva leyenda… y la
+          policía todavía está buscando explicaciones.
+        </p>
+        <div id="btns-win">
+          <button id="btn-reiniciar-exito" class="button">
+            ¿Otra ronda o te has asustado?
+          </button>
+          <button
+            class="button btn-music"
+            type="button"
+            aria-label="Apagar musica"
+          >
+            <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
+          </button>
+        </div>
       </section>
 
       <section id="pantalla-final-wasted" class="pantalla oculta" hidden>
-         <h2>WASTED</h2>
+        <h2>WASTED</h2>
 
-         <p id="mensajeFinal_wasted">
-            Te has confiado demasiado… Un semáforo, una patrulla y tu mala suerte
-            han hecho equipo contra ti. Resultado: prisión con desayuno gratis
-            (sin wifi)
-         </p>
-         <div id="btns-wasted">
-            <button id="btn-reiniciar-wasted" class="button fail">
-               Intentarlo otra vez
-            </button>
-            <button class="button btn-music" type="button" aria-label="Apagar musica">
-               <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
-            </button>
-         </div>
+        <p id="mensajeFinal_wasted">
+          Te has confiado demasiado… Un semáforo, una patrulla y tu mala suerte
+          han hecho equipo contra ti. Resultado: prisión con desayuno gratis
+          (sin wifi)
+        </p>
+        <div id="btns-wasted">
+          <button id="btn-reiniciar-wasted" class="button fail">
+            Intentarlo otra vez
+          </button>
+          <button
+            class="button btn-music"
+            type="button"
+            aria-label="Apagar musica"
+          >
+            <img src="./assets/icons/volume_up.svg" alt="Musica activada" />
+          </button>
+        </div>
       </section>
-   </main>
+    </main>
 
-   <footer class="pie">
+    <footer class="pie">
       <section class="pie_autores">
-         <h3 hidden>Creadores</h3>
-         <ul>
-            <li>
-               <a href="https://github.com/zookatt" target="_blank" rel="noopener noreferrer">
-                  Ekaterina Zotova
-               </a>
-            </li>
-            <li>
-               <a href="https://github.com/AlexJYad" target="_blank" rel="noopener noreferrer">
-                  Alexander Yakovlev
-               </a>
-            </li>
-            <li>
-               <a href="https://github.com/pshecko" target="_blank" rel="noopener noreferrer">
-                  Roman Dzhamalov
-               </a>
-            </li>
-
-         </ul>
+        <h3 hidden>Creadores</h3>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/zookatt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ekaterina Zotova
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/AlexJYad"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Alexander Yakovlev
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/pshecko"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Roman Dzhamalov
+            </a>
+          </li>
+        </ul>
       </section>
 
       <section class="pie__legal">
-         <h3 hidden>Aviso Legal</h3>
-         <p>&copy; 2026 Todos los derechos reservados</p>
+        <h3 hidden>Aviso Legal</h3>
+        <p>&copy; 2026 Todos los derechos reservados</p>
       </section>
-   </footer>
+    </footer>
 
-   <script src="src/SlotMachine.js"></script>
-   <script src="script.js"></script>
-</body>
-
+    <script src="src/SlotMachine.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -116,7 +116,8 @@ function checkReto1() {
     return;
   }
 
-  mensajeReto1.textContent = "Codigo incorrecto. Intentalo otra vez.";
+  mensajeReto1.textContent = "Codigo incorrecto.";
+  showScreen("wasted");
 }
 
 function checkReto2(selectedValue) {

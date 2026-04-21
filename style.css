@@ -35,7 +35,7 @@ ul {
   --bg-dark: #182226;
   --danger-red: #f03f30;
   /* размеры */
-  --main-widht: 402px;
+  --main-widht: 768px;
   --container-width: 362px;
 
   /* отступы */
@@ -50,6 +50,7 @@ ul {
   --font-h: Pricedown;
   --font-size-h: 40px;
   --font-size-large: 50px;
+  --font-size-larger: 60px;
   --font-weight-h: 900;
 
   /* анимации */
@@ -78,6 +79,7 @@ body.body--inicio {
 
 body.body--reto1 {
   background-image: url(./assets/img/room1_bg.jpg);
+  background-position: center 70%;
 }
 
 body.body--reto2 {
@@ -177,10 +179,15 @@ h2 span {
 
 /* Start Page */
 
-#pantalla-inicio p {
-  background-color: var(--bg-dark);
+.parrafos-inicio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-M);
   padding: var(--spacing-M);
-  font-family: var(--font-main);
+  background-color: var(--bg-dark);
+}
+.parrafos-inicio p:last-child {
+  color: var(--accent-dark);
 }
 #pantalla-inicio p span,
 .pista,
@@ -218,7 +225,13 @@ h2 span {
   gap: var(--spacing-S);
   margin: var(--spacing-M);
 }
+#info-inicio ul li {
+  background-color: rgb(24 34 38 / 70%);
+  padding: var(--spacing-S) var(--spacing-M);
+}
+
 #info-inicio ul li:first-child {
+  border-top: 2px solid var(--accent-dark);
   font-family: var(--font-h);
   font-size: var(--font-size-h);
   color: var(--text-light);
@@ -373,4 +386,155 @@ input[type="radio"]:checked {
 
 [hidden] {
   display: none !important;
+}
+
+/* RESPONSIVE TABLET 768px */
+
+@media (min-width: 768px) {
+  .pie {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .pie_autores ul li {
+    margin: 0 var(--spacing-M);
+  }
+
+  .pie_autores ul li a {
+    color: var(--text-light);
+    cursor: pointer;
+  }
+  .pie_autores ul li a:hover {
+    color: var(--base-color);
+  }
+}
+
+/* RESPONSIVE DESKTOP 1200px */
+@media (min-width: 1200px) {
+  body.body--reto2 {
+    background-position: center 35%;
+  }
+  body.body--reto3 {
+    background-position: center 35%;
+  }
+  body.body--exito {
+    background-position: center 35%;
+  }
+  body.body--wasted {
+    background-position: center 40%;
+  }
+
+  .contenedor {
+    max-width: 1200px;
+  }
+  #pantalla-inicio {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: var(--spacing-M);
+    margin: 0 var(--spacing-L);
+    padding: var(--spacing-L);
+  }
+  #pantalla-inicio p,
+  #info-inicio {
+    grid-column: 1;
+  }
+  h1 {
+    font-size: var(--font-size-larger);
+    text-align: start;
+  }
+  h1 span {
+    font-size: 80px;
+  }
+  #btns-inicio {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-L);
+    margin: var(--spacing-M);
+    background-color: rgb(24 34 38 / 70%);
+    border: 2px solid var(--accent-dark);
+  }
+  #btn-empezar {
+    padding: var(--spacing-M);
+  }
+  #btn-empezar:hover {
+    border: solid 4px var(--text-light);
+    color: var(--text-light);
+  }
+
+  #info-inicio ul li:first-child {
+    font-size: var(--font-size-larger);
+  }
+  .pie_autores ul {
+    padding: 0 var(--spacing-L);
+  }
+  #reto1,
+  #reto2,
+  #reto3 {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: var(--spacing-M);
+    margin: 0 var(--spacing-L);
+    padding: var(--spacing-L);
+  }
+  #reto1 h2,
+  #reto1 .text-contenedor {
+    grid-column: 1;
+  }
+  #reto1 h2 {
+    grid-row: 1;
+    font-size: var(--font-size-larger);
+  }
+  #reto1 .slots {
+    grid-column: 2;
+    grid-row: 1;
+    margin: var(--spacing-L) 0;
+  }
+  #reto1 #btn-reto1 {
+    grid-column: 2;
+    grid-row: 2;
+    margin: var(--spacing-L) 0;
+  }
+  #reto1 #btns-top {
+    padding: var(--spacing-M) 0;
+    grid-row: 3;
+  }
+
+  #reto2 h2,
+  #reto2 .text-contenedor {
+    grid-column: 1;
+  }
+  #reto2 h2 {
+    grid-row: 1;
+    font-size: var(--font-size-larger);
+  }
+  #reto2 #btns-top {
+    padding: var(--spacing-M) 0;
+    grid-row: 3;
+  }
+
+  #reto3 h2,
+  #reto3 .text-contenedor {
+    grid-column: 1;
+  }
+  #reto3 h2 {
+    grid-row: 1;
+    font-size: var(--font-size-larger);
+  }
+  #reto3 #btns-top {
+    padding: var(--spacing-M) 0;
+    grid-row: 3;
+  }
+  #reto3 .text-contenedor {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #reto3 .text-contenedor.radio-btns {
+    grid-column: 2;
+    grid-row: 1;
+    margin: var(--spacing-M);
+  }
+  #btn-reto3 {
+    grid-row: 2;
+  }
 }
