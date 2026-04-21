@@ -46,12 +46,15 @@ ul {
   /* шрифты */
   --font-main: "Roboto", sans-serif;
   --font-size-base: 16px;
+  --font-size-small: 14px;
   --font-size-medium: 24px;
   --font-h: Pricedown;
   --font-size-h: 40px;
   --font-size-large: 50px;
   --font-size-larger: 60px;
   --font-weight-h: 900;
+  --line-height-base: 1.5;
+  --line-height-tight: 1.1;
 
   /* анимации */
   --transition-fast: 0.2s ease;
@@ -62,6 +65,7 @@ ul {
 body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
   color: var(--text-light);
   background-position: center;
   background-repeat: no-repeat;
@@ -125,6 +129,7 @@ body.body--wasted {
   color: var(--base-color);
   font-family: var(--font-h);
   font-size: var(--font-size-medium);
+  line-height: 1;
 }
 
 .button.fail {
@@ -161,6 +166,8 @@ h2 {
   padding: var(--spacing-M) var(--spacing-L);
   font-family: var(--font-h);
   font-size: var(--font-size-h);
+  line-height: var(--line-height-tight);
+  letter-spacing: 0.02em;
   text-align: center;
 }
 h1 span,
@@ -176,6 +183,15 @@ h2 span {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-S);
+}
+
+.text-contenedor p,
+.parrafos-inicio p,
+#pantalla-final-exito p,
+#pantalla-final-wasted p,
+.pie {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
 }
 
 /* Start Page */
@@ -235,6 +251,7 @@ h2 span {
   border-top: 2px solid var(--accent-dark);
   font-family: var(--font-h);
   font-size: var(--font-size-h);
+  line-height: 1;
   color: var(--text-light);
   -webkit-text-stroke: 3px var(--accent-dark);
 }
@@ -246,6 +263,8 @@ h2 span {
 #togglePista3 {
   cursor: pointer;
   color: var(--bg-light);
+  font-size: var(--font-size-small);
+  line-height: 1.4;
 }
 .opciones {
   display: flex;
@@ -267,6 +286,7 @@ h2 span {
   padding: var(--spacing-M);
   font-family: var(--font-h);
   font-size: var(--font-size-medium);
+  line-height: 1;
 }
 
 .opciones-reto3 {
@@ -279,6 +299,7 @@ h2 span {
   color: var(--base-color);
   font-family: var(--font-h);
   font-size: var(--font-size-medium);
+  line-height: 1.1;
   border: 2px solid var(--base-color);
   padding: var(--spacing-M) var(--spacing-S);
 }
@@ -392,6 +413,15 @@ input[type="radio"]:checked {
 /* RESPONSIVE TABLET 768px */
 
 @media (min-width: 768px) {
+  :root {
+    --font-size-base: 17px;
+    --font-size-small: 15px;
+    --font-size-medium: 26px;
+    --font-size-h: 44px;
+    --font-size-large: 54px;
+    --font-size-larger: 66px;
+  }
+
   .pie {
     display: flex;
     justify-content: space-evenly;
@@ -411,6 +441,15 @@ input[type="radio"]:checked {
 
 /* RESPONSIVE DESKTOP 1200px */
 @media (min-width: 1200px) {
+  :root {
+    --font-size-base: 18px;
+    --font-size-small: 16px;
+    --font-size-medium: 28px;
+    --font-size-h: 50px;
+    --font-size-large: 60px;
+    --font-size-larger: 74px;
+  }
+
   body.body--reto2 {
     background-position: center 35%;
   }
@@ -432,7 +471,6 @@ input[type="radio"]:checked {
     grid-template-columns: 60% 40%;
     gap: var(--spacing-M);
     margin: 0 var(--spacing-L);
-    padding: var(--spacing-L);
   }
   #pantalla-inicio p,
   #info-inicio {
@@ -443,7 +481,7 @@ input[type="radio"]:checked {
     text-align: start;
   }
   h1 span {
-    font-size: 80px;
+    font-size: var(--font-size-larger);
   }
   #btns-inicio {
     grid-column: 2;
@@ -478,11 +516,21 @@ input[type="radio"]:checked {
     margin: 0 var(--spacing-L);
     padding: var(--spacing-L);
   }
+
+  #reto3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-S) var(--spacing-M);
+    margin: 0 var(--spacing-L);
+    padding: var(--spacing-L);
+  }
   #reto1 h2,
   #reto1 .text-contenedor {
     grid-column: 1;
   }
-  #reto1 h2 {
+  #reto1 h2,
+  #reto2 h2,
+  #reto3 h2 {
     grid-row: 1;
     font-size: var(--font-size-larger);
   }
