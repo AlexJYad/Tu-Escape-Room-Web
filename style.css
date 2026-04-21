@@ -473,7 +473,7 @@ input[type="radio"]:checked {
   #reto3 {
     display: grid;
     grid-template-columns: 60% 40%;
-    gap: var(--spacing-M);
+    gap: var(--spacing-S) var(--spacing-M);
     margin: 0 var(--spacing-L);
     padding: var(--spacing-L);
   }
@@ -528,7 +528,6 @@ input[type="radio"]:checked {
     font-size: var(--font-size-larger);
   }
   #reto3 #btns-top {
-    padding: var(--spacing-M) 0;
     grid-row: 3;
   }
   #reto3 .text-contenedor {
@@ -541,6 +540,8 @@ input[type="radio"]:checked {
     margin: var(--spacing-M);
   }
   #btn-reto3 {
+    margin: var(--spacing-M);
     grid-row: 2;
+    width: auto;
   }
 }
