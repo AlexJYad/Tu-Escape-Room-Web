@@ -70,6 +70,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  cursor: url("./assets/cursor.cur"), auto;
 }
 
 /* Background image for rooms */
