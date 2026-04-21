@@ -499,7 +499,13 @@ input[type="radio"]:checked {
     padding: var(--spacing-M) 0;
     grid-row: 3;
   }
-
+  #reto2 .opciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row: 1;
+    grid-row: 1 / span 2;
+    gap: var(--spacing-M);
+  }
   #reto2 h2,
   #reto2 .text-contenedor {
     grid-column: 1;
