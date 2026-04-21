@@ -128,6 +128,7 @@ function checkReto2(selectedValue) {
   }
 
   mensajeReto2.textContent = "Esa opcion no abre la caja fuerte.";
+  showScreen("wasted");
 }
 
 function checkReto3() {
@@ -142,6 +143,7 @@ function checkReto3() {
   }
 
   mensajeReto3.textContent = "Respuesta incorrecta. Prueba otra opcion.";
+  showScreen("wasted");
 }
 
 btnEmpezar.addEventListener("click", () => {

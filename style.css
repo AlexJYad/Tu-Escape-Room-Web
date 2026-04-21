@@ -197,7 +197,7 @@ h2 span {
   color: var(--accent-dark);
 }
 #btns-inicio,
-#btns-top,
+.btns-top,
 #btns-win,
 #btns-wasted {
   display: flex;
@@ -205,7 +205,7 @@ h2 span {
   gap: var(--spacing-S);
 }
 
-#btns-top {
+.btns-top {
   margin: var(--spacing-M) 0;
   :first-child {
     flex-grow: 1;
@@ -496,7 +496,7 @@ input[type="radio"]:checked {
     grid-row: 2;
     margin: var(--spacing-L) 0;
   }
-  #reto1 #btns-top {
+  #reto1 .btns-top {
     padding: var(--spacing-M) 0;
     grid-row: 3;
   }
@@ -513,9 +513,10 @@ input[type="radio"]:checked {
   }
   #reto2 h2 {
     grid-row: 1;
-    font-size: var(--font-size-larger);
+    font-size: var(--font-size-large);
   }
-  #reto2 #btns-top {
+
+  #reto2 .btns-top {
     padding: var(--spacing-M) 0;
     grid-row: 3;
   }
@@ -528,7 +529,7 @@ input[type="radio"]:checked {
     grid-row: 1;
     font-size: var(--font-size-larger);
   }
-  #reto3 #btns-top {
+  #reto3 .btns-top {
     grid-row: 3;
   }
   #reto3 .text-contenedor {
