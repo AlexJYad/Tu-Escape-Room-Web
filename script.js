@@ -1,10 +1,10 @@
 const screens = {
-  inicio: document.getElementById("pantalla-inicio"),
-  reto1: document.getElementById("reto1"),
-  reto2: document.getElementById("reto2"),
-  reto3: document.getElementById("reto3"),
-  exito: document.getElementById("pantalla-final-exito"),
-  wasted: document.getElementById("pantalla-final-wasted"),
+   inicio: document.getElementById("pantalla-inicio"),
+   reto1: document.getElementById("reto1"),
+   reto2: document.getElementById("reto2"),
+   reto3: document.getElementById("reto3"),
+   exito: document.getElementById("pantalla-final-exito"),
+   wasted: document.getElementById("pantalla-final-wasted"),
 };
 
 const body = document.body;
@@ -38,130 +38,168 @@ backgroundMusic.loop = true;
 backgroundMusic.volume = 0.25;
 
 function updateMusicButtons() {
-  const musicEnabled = !backgroundMusic.paused;
+   const musicEnabled = !backgroundMusic.paused;
 
-  musicButtons.forEach((button) => {
-    const iconMusic = button.querySelector("img");
-    if (!iconMusic) return;
+   musicButtons.forEach((button) => {
+      const iconMusic = button.querySelector("img");
+      if (!iconMusic) return;
 
-    iconMusic.src = musicEnabled ? musicIconOn : musicIconOff;
-    iconMusic.alt = musicEnabled ? "Musica activada" : "Musica desactivada";
-    button.setAttribute(
-      "aria-label",
-      musicEnabled ? "Apagar musica" : "Encender musica",
-    );
-  });
+      iconMusic.src = musicEnabled ? musicIconOn : musicIconOff;
+      iconMusic.alt = musicEnabled ? "Musica activada" : "Musica desactivada";
+      button.setAttribute(
+         "aria-label",
+         musicEnabled ? "Apagar musica" : "Encender musica",
+      );
+   });
 }
 
 function toggleMusic() {
-  if (backgroundMusic.paused) {
-    backgroundMusic.play();
-  } else {
-    backgroundMusic.pause();
-  }
+   if (backgroundMusic.paused) {
+      backgroundMusic.play();
+   } else {
+      backgroundMusic.pause();
+   }
 
-  updateMusicButtons();
+   updateMusicButtons();
 }
 
 function setBodyBackground(screenName) {
-  body.classList.remove(
-    "body--inicio",
-    "body--reto1",
-    "body--reto2",
-    "body--reto3",
-    "body--exito",
-    "body--wasted",
-  );
-  body.classList.add(`body--${screenName}`);
+   body.classList.remove(
+      "body--inicio",
+      "body--reto1",
+      "body--reto2",
+      "body--reto3",
+      "body--exito",
+      "body--wasted",
+   );
+   body.classList.add(`body--${screenName}`);
 }
 
 function showScreen(screenName) {
-  Object.values(screens).forEach((screen) =>
-    screen.setAttribute("hidden", true),
-  );
-  screens[screenName].removeAttribute("hidden");
-  setBodyBackground(screenName);
+   Object.values(screens).forEach((screen) =>
+      screen.setAttribute("hidden", true),
+   );
+   screens[screenName].removeAttribute("hidden");
+   setBodyBackground(screenName);
 }
 
 function toggleHint(hintElement) {
-  if (hintElement.hasAttribute("hidden")) {
-    hintElement.removeAttribute("hidden");
-    return;
-  }
+   if (hintElement.hasAttribute("hidden")) {
+      hintElement.removeAttribute("hidden");
+      return;
+   }
 
-  hintElement.setAttribute("hidden", true);
+   hintElement.setAttribute("hidden", true);
 }
 
 function resetGame() {
-  machine.resetValue();
-  opcionesReto3.forEach((option) => {
-    option.checked = false;
-  });
+   machine.resetValue();
+   opcionesReto3.forEach((option) => {
+      option.checked = false;
+   });
 
-  [mensajeReto1, mensajeReto2, mensajeReto3].forEach((message) => {
-    message.textContent = "";
-  });
+   [mensajeReto1, mensajeReto2, mensajeReto3].forEach((message) => {
+      message.textContent = "";
+   });
 
-  [pista1, pista2, pista3].forEach((hint) => {
-    hint.setAttribute("hidden", true);
-  });
+   [pista1, pista2, pista3].forEach((hint) => {
+      hint.setAttribute("hidden", true);
+   });
 
-  showScreen("inicio");
+   showScreen("inicio");
 }
 
 function checkReto1() {
-  if (machine.getValue() === 555) {
-    mensajeReto1.textContent = "Codigo correcto. Pasas al siguiente reto.";
-    showScreen("reto2");
-    return;
-  }
+   if (machine.getValue() === 555) {
+      mensajeReto1.textContent = "Codigo correcto. Pasas al siguiente reto.";
+      showScreen("reto2");
+      return;
+   }
 
-  mensajeReto1.textContent = "Codigo incorrecto.";
-  showScreen("wasted");
+   mensajeReto1.textContent = "Codigo incorrecto.";
+   showScreen("wasted");
 }
+// Новые варианты для использования нужных переменных
+
+const correctValuesReto2 = ["10", "20", "40", "80", "160", "320"];
 
 function checkReto2(selectedValue) {
-  if (selectedValue === "80") {
-    mensajeReto2.textContent = "Secuencia correcta. Vamos al tercer reto.";
-    showScreen("reto3");
-    return;
-  }
+   if (correctValuesReto2.includes(selectedValue)) {
+      mensajeReto2.textContent = "Secuencia correcta. Vamos al tercer reto.";
+      showScreen("reto3");
+      return;
+   }
 
-  mensajeReto2.textContent = "Esa opcion no abre la caja fuerte.";
-  showScreen("wasted");
+   mensajeReto2.textContent = "Esa opcion no abre la caja fuerte.";
+   showScreen("wasted");
 }
+
+// function checkReto2(selectedValue) {
+//    if (selectedValue === "80") {
+//       mensajeReto2.textContent = "Secuencia correcta. Vamos al tercer reto.";
+//       showScreen("reto3");
+//       return;
+//    }
+
+//    mensajeReto2.textContent = "Esa opcion no abre la caja fuerte.";
+//    showScreen("wasted");
+// }
+
+const reto3Config = {
+   policia: {
+      success: true,
+      message: "Has despistado a la policia.",
+      nextScreen: "exito",
+   },
+   default: {
+      success: false,
+      message: "Respuesta incorrecta. Prueba otra opcion.",
+      nextScreen: "wasted",
+   },
+};
 
 function checkReto3() {
-  const selectedOption = document.querySelector(
-    'input[name="respuestaReto3"]:checked',
-  );
+   const selectedOption = document.querySelector(
+      'input[name="respuestaReto3"]:checked',
+   );
 
-  if (selectedOption?.value === "policia") {
-    mensajeReto3.textContent = "Has despistado a la policia.";
-    showScreen("exito");
-    return;
-  }
+   const result = reto3Config[selectedOption?.value] || reto3Config.default;
 
-  mensajeReto3.textContent = "Respuesta incorrecta. Prueba otra opcion.";
-  showScreen("wasted");
+   mensajeReto3.textContent = result.message;
+   showScreen(result.nextScreen);
 }
 
+// function checkReto3() {
+//    const selectedOption = document.querySelector(
+//       'input[name="respuestaReto3"]:checked',
+//    );
+
+//    if (selectedOption?.value === "policia") {
+//       mensajeReto3.textContent = "Has despistado a la policia.";
+//       showScreen("exito");
+//       return;
+//    }
+
+//    mensajeReto3.textContent = "Respuesta incorrecta. Prueba otra opcion.";
+//    showScreen("wasted");
+// }
+
 btnEmpezar.addEventListener("click", () => {
-  showScreen("reto1");
+   showScreen("reto1");
 });
 
 btnReto1.addEventListener("click", checkReto1);
 
 surrenderButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    showScreen("wasted");
-  });
+   button.addEventListener("click", () => {
+      showScreen("wasted");
+   });
 });
 
 opcionesReto2.forEach((button) => {
-  button.addEventListener("click", () => {
-    checkReto2(button.dataset.value);
-  });
+   button.addEventListener("click", () => {
+      checkReto2(button.dataset.value);
+   });
 });
 
 btnReto3.addEventListener("click", checkReto3);
@@ -174,7 +212,7 @@ togglePista2.addEventListener("click", () => toggleHint(pista2));
 togglePista3.addEventListener("click", () => toggleHint(pista3));
 
 musicButtons.forEach((button) => {
-  button.addEventListener("click", toggleMusic);
+   button.addEventListener("click", toggleMusic);
 });
 
 updateMusicButtons();
