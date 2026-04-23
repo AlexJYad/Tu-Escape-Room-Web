@@ -20,10 +20,6 @@ const pista1 = document.getElementById("pista1");
 const pista2 = document.getElementById("pista2");
 const pista3 = document.getElementById("pista3");
 
-const mensajeReto1 = document.getElementById("mensajeReto1");
-const mensajeReto2 = document.getElementById("mensajeReto2");
-const mensajeReto3 = document.getElementById("mensajeReto3");
-
 const btnEmpezar = document.getElementById("btn-empezar");
 const btnReto1 = document.getElementById("btn-reto1");
 const surrenderButtons = document.querySelectorAll(".btn-rindo");
@@ -98,10 +94,6 @@ function resetGame() {
       option.checked = false;
    });
 
-   [mensajeReto1, mensajeReto2, mensajeReto3].forEach((message) => {
-      message.textContent = "";
-   });
-
    [pista1, pista2, pista3].forEach((hint) => {
       hint.setAttribute("hidden", true);
    });
@@ -111,49 +103,31 @@ function resetGame() {
 
 function checkReto1() {
    if (machine.getValue() === 555) {
-      mensajeReto1.textContent = "Codigo correcto. Pasas al siguiente reto.";
       showScreen("reto2");
       return;
    }
 
-   mensajeReto1.textContent = "Codigo incorrecto.";
    showScreen("wasted");
 }
-// Новые варианты для использования нужных переменных
 
 const correctValuesReto2 = ["10", "20", "40", "80", "160", "320"];
 
 function checkReto2(selectedValue) {
    if (correctValuesReto2.includes(selectedValue)) {
-      mensajeReto2.textContent = "Secuencia correcta. Vamos al tercer reto.";
       showScreen("reto3");
       return;
    }
 
-   mensajeReto2.textContent = "Esa opcion no abre la caja fuerte.";
    showScreen("wasted");
 }
-
-// function checkReto2(selectedValue) {
-//    if (selectedValue === "80") {
-//       mensajeReto2.textContent = "Secuencia correcta. Vamos al tercer reto.";
-//       showScreen("reto3");
-//       return;
-//    }
-
-//    mensajeReto2.textContent = "Esa opcion no abre la caja fuerte.";
-//    showScreen("wasted");
-// }
 
 const reto3Config = {
    policia: {
       success: true,
-      message: "Has despistado a la policia.",
       nextScreen: "exito",
    },
    default: {
       success: false,
-      message: "Respuesta incorrecta. Prueba otra opcion.",
       nextScreen: "wasted",
    },
 };
@@ -165,24 +139,8 @@ function checkReto3() {
 
    const result = reto3Config[selectedOption?.value] || reto3Config.default;
 
-   mensajeReto3.textContent = result.message;
    showScreen(result.nextScreen);
 }
-
-// function checkReto3() {
-//    const selectedOption = document.querySelector(
-//       'input[name="respuestaReto3"]:checked',
-//    );
-
-//    if (selectedOption?.value === "policia") {
-//       mensajeReto3.textContent = "Has despistado a la policia.";
-//       showScreen("exito");
-//       return;
-//    }
-
-//    mensajeReto3.textContent = "Respuesta incorrecta. Prueba otra opcion.";
-//    showScreen("wasted");
-// }
 
 btnEmpezar.addEventListener("click", () => {
    showScreen("reto1");
