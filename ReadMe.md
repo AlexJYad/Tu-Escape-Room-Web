@@ -2,50 +2,124 @@
 
 ## Descripcion del proyecto
 
-Escape Room Web es una experiencia interactiva inspirada en el universo de GTA. El jugador debe completar varios retos para escapar de Los Santos antes de que se acabe el tiempo. A lo largo de la partida tendra que descifrar codigos, resolver pruebas logicas y tomar decisiones mientras avanza por una historia breve con ambientacion visual y sonora.
+Escape Room Web es una aplicacion web inspirada en el universo GTA. El jugador debe superar una serie de retos para escapar de Los Santos antes de ser atrapado. El proyecto esta pensado como un MVP funcional para practicar desarrollo front-end con HTML, CSS y JavaScript.
 
-Este proyecto ha sido desarrollado con fines educativos para practicar:
+## Objetivo del MVP
 
-- HTML
-- CSS responsive
-- JavaScript y manipulacion del DOM
-- Diseno de interfaces y narrativa interactiva
+El objetivo es construir un Escape Room en navegador que incluya:
 
-## Описание проекта (RU)
+- Al menos 3 pruebas o retos
+- Navegacion entre pantallas o estados
+- Logica de juego con JavaScript
+- Validaciones de respuestas correctas e incorrectas
+- Manipulacion del DOM para mostrar el progreso del jugador
 
-Escape Room Web — это интерактивная игра в стиле GTA, в которой игроку нужно пройти несколько испытаний, чтобы выбраться из Лос-Сантоса до истечения времени. По ходу игры нужно разгадывать коды, решать логические задачи и продвигаться по короткому сюжету с визуальной и звуковой атмосферой.
+## Contenido del juego
 
-Проект создан в учебных целях для практики:
+La aplicacion incluye los siguientes estados principales:
 
-- HTML
-- Адаптивного CSS
-- JavaScript и работы с DOM
-- Дизайна интерфейсов и интерактивного повествования
+- Pantalla de inicio
+- Reto 1: codigo secreto para arrancar el coche
+- Reto 2: secuencia numerica para abrir la caja fuerte
+- Reto 3: adivinanza final para escapar de la policia
+- Pantalla final de exito
+- Pantalla final de derrota
 
-## Demo
+## Analisis y planificacion
 
-GitHub Pages: https://alexjyad.github.io/Tu-Escape-Room-Web/
+Antes de desarrollar el proyecto se definio un MVP sencillo, claro y explicable en una demo. La prioridad fue construir una experiencia corta pero funcional, centrada en tres retos principales y en una navegacion facil de seguir.
 
----
+Aspectos definidos en esta fase:
 
-## Funcionalidades
+- Tema del juego: escape ambientado en GTA
+- Flujo principal: inicio -> retos -> final
+- Tipo de pruebas: input, botones y seleccion de respuesta
+- Requisitos tecnicos: HTML, CSS, JavaScript y DOM
+- Reparto del trabajo por roles dentro del equipo
 
-- Pantalla de inicio con contexto narrativo
-- Retos interactivos con pistas
-- Logica de juego en JavaScript
-- Cambios visuales segun el progreso del jugador
-- Pantallas finales de exito o derrota
-- Musica para reforzar la ambientacion
+## Diseno
 
----
+El diseno busca transmitir una experiencia arcade con una atmosfera de tension y huida. Se trabajo una identidad visual basada en:
 
-## Tecnologias
+- Ambientacion inspirada en GTA
+- Pantallas diferenciadas por estados del juego
+- Textos narrativos para introducir cada reto
+- Uso de botones, pistas y mensajes visuales de feedback
+- Musica para reforzar la inmersion
 
+## Desarrollo
+
+Durante el desarrollo se implementaron las siguientes funcionalidades:
+
+- Pantalla inicial con introduccion narrativa
+- Navegacion entre secciones usando JavaScript
+- Validacion de respuestas en cada reto
+- Sistema de victoria y derrota
+- Reinicio del juego
+- Mostrar y ocultar pistas
+- Control de musica dentro de la interfaz
+
+### Ejemplos de logica implementada
+
+- Comprobacion del codigo correcto en el reto 1
+- Validacion de la opcion seleccionada en el reto 2
+- Lectura de radio buttons en el reto 3
+- Cambio dinamico de pantalla con manipulacion del DOM
+- Reset del estado del juego al reiniciar
+
+## Pruebas
+
+Para validar el MVP se comprobaron los siguientes casos:
+
+- El boton de empezar muestra correctamente el primer reto
+- Una respuesta correcta permite avanzar al siguiente reto
+- Una respuesta incorrecta lleva a la pantalla de derrota
+- El juego puede reiniciarse desde las pantallas finales
+- Las pistas se muestran y ocultan correctamente
+- La musica puede activarse y desactivarse
+
+### Casos que se pueden enseñar en la demo
+
+- Caso correcto: resolver los tres retos y llegar a la pantalla final de exito
+- Caso de error: introducir una respuesta incorrecta o elegir una opcion equivocada y mostrar la pantalla de derrota
+
+
+## Roles del equipo
+
+- UX/UI y Game Design: **Roman Dzhamalov**
+- HTML, CSS y Game Design: **Ekaterina Zotova**
+- JavaScript y Game Design: **Alexander Yakovlev**
+
+
+### Ejemplo de historia de usuario
+
+**Tarea 1: Empezar el juego**
+
+Como jugador, quiero pulsar un boton para empezar el juego y entrar en el escape room.
+
+**Criterios de aceptacion**
+
+- Existe un boton "Empezar"
+- Al hacer click desaparece la pantalla inicial
+- Se muestra la primera prueba
+
+**Responsable**
+
+- Pendiente de completar por el equipo
+
+**Estado**
+
+- Done
+
+## Tecnologias utilizadas
+
+- Figma
+- Miro
 - HTML5
 - CSS3
 - JavaScript
-
----
+- Git
+- Github 
 
 ## Estructura del proyecto
 
@@ -58,23 +132,44 @@ GitHub Pages: https://alexjyad.github.io/Tu-Escape-Room-Web/
 |-- /src
 ```
 
----
-
 ## Equipo
 
 - UX/UI y Game Design: **Roman Dzhamalov**
 - HTML, CSS y Game Design: **Ekaterina Zotova**
 - JavaScript y Game Design: **Alexander Yakovlev**
 
----
+## Demo
 
-## Como ejecutar
+GitHub Pages: https://alexjyad.github.io/Tu-Escape-Room-Web/
+
+## Como ejecutar el proyecto
 
 1. Clona o descarga este repositorio.
 2. Abre `index.html` en tu navegador.
 
----
-
 ## Estado del proyecto
 
-En desarrollo.
+MVP funcional en desarrollo y preparado para presentacion.
+
+## Screenshots
+
+
+### Inicio
+
+![Pantalla de inicio](./assets/screenshots/inicio.png)
+
+### Reto 1
+
+![Reto 1](./assets/screenshots/reto1.png)
+
+### Reto 2
+
+![Reto 2](./assets/screenshots/reto2.png)
+
+### Reto 3
+
+![Reto 3](./assets/screenshots/reto3.png)
+
+### Pantalla final
+
+![Pantalla final](./assets/screenshots/final.png)
