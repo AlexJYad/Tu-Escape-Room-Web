@@ -259,6 +259,11 @@ h2 span {
   flex: 1 1 auto;
 }
 
+#btn-reiniciar-exito,
+#btn-reiniciar-wasted {
+  flex: 1 1 auto;
+}
+
 .btns-top {
   margin: var(--spacing-M) 0;
   :first-child {
@@ -266,11 +271,11 @@ h2 span {
   }
 }
 #btns-win {
-  margin-top: auto;
+  margin-top: 0;
 }
 
 #btns-wasted {
-  margin-top: auto;
+  margin-top: 0;
 }
 
 #info-inicio {
@@ -308,6 +313,10 @@ h2 span {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.pantalla-reto__top > .btns-top {
+  margin-bottom: 0;
 }
 
 #reto1,
@@ -400,15 +409,19 @@ input[type="radio"]:checked {
 /* FOOTER */
 
 .pie {
-  margin-top: auto;
+  margin-top: var(--spacing-M);
   background-color: rgb(24 34 38 / 70%);
-  padding: var(--spacing-S);
+  padding: var(--spacing-M);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-S);
 }
 
 .pie_autores,
 .pie__legal {
   text-align: center;
-  margin: var(--spacing-S);
+  margin: 0;
 }
 
 .pie_autores ul li a {
@@ -419,7 +432,9 @@ input[type="radio"]:checked {
 }
 .pie_autores ul {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-S) var(--spacing-M);
 }
 
 /* WINNING */
@@ -436,11 +451,12 @@ input[type="radio"]:checked {
   background-color: rgb(24 34 38 / 70%);
   padding: var(--spacing-M);
   font-family: var(--font-main);
+  margin-top: auto;
 }
 #pantalla-final-exito {
   display: flex;
   flex-direction: column;
-
+  gap: var(--spacing-M);
   min-height: calc(100vh - 120px);
 }
 
@@ -479,10 +495,12 @@ input[type="radio"]:checked {
   background-color: rgb(24 34 38 / 70%);
   padding: var(--spacing-M);
   font-family: var(--font-main);
+  margin-top: auto;
 }
 #pantalla-final-wasted {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-M);
   min-height: calc(100vh - 120px);
 }
 
@@ -499,6 +517,10 @@ input[type="radio"]:checked {
   .button-bottom,
   #btn-reto3 {
     padding: 12px;
+  }
+
+  #reto2 .opcion-reto2 {
+    padding: 20px 12px;
   }
 
   .btn-music {
@@ -524,15 +546,13 @@ input[type="radio"]:checked {
   }
 
   .pie {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .pie_autores ul li {
-    margin: 0 var(--spacing-M);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .pie_autores ul li a {
-    color: var(--text-light);
+    color: var(--base-color);
     cursor: pointer;
   }
   .pie_autores ul li a:hover {
@@ -616,8 +636,6 @@ input[type="radio"]:checked {
     font-size: var(--font-size-larger);
   }
   .pie {
-    justify-content: space-between;
-    align-items: center;
     padding: var(--spacing-M) var(--spacing-L);
   }
   .pie_autores,
@@ -696,17 +714,21 @@ input[type="radio"]:checked {
   #pantalla-final-wasted {
     width: min(100%, 720px);
     margin: 0 auto;
-    justify-content: center;
+    justify-content: flex-start;
     gap: var(--spacing-M);
   }
   #pantalla-final-exito h2,
-  #pantalla-final-exito p,
   #pantalla-final-wasted h2,
-  #pantalla-final-wasted p,
   #btns-win,
   #btns-wasted {
     width: 100%;
     margin: 0;
+  }
+  #pantalla-final-exito p,
+  #pantalla-final-wasted p {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 0;
   }
   #btns-win,
   #btns-wasted {
