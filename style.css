@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Pricedown";
-  src: url("./src/fonts/pricedown.otf") format("opentype");
+  src: url("./assets/fonts/pricedown.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }

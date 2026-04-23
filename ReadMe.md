@@ -141,7 +141,8 @@ Como jugador, quiero pulsar un boton para empezar el juego y entrar en el escape
 |-- style.css
 |-- script.js
 |-- /assets
-|-- /src
+|   |-- SlotMachine.css
+|   |-- SlotMachine.js
 ```
 
 ## Equipo
