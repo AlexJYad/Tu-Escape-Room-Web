@@ -13,6 +13,7 @@ Thumbs.db
 *.ntvs*
 *.njsproj
 *.sln
+.codex-screens/
 
 # ===============================
 # 🔐 Environment variables
