@@ -69,8 +69,16 @@ Durante el desarrollo se implementaron las siguientes funcionalidades:
 
 ### Ejemplos de funcionalidades desarrolladas
 
+#### Reset
+
 ![Reset](./assets/screenshots/f-resetGame.png)
+
+#### Encender/Apagar la musica
+
 ![Encender/Apagar la musica](./assets/screenshots/f-MusicButtons.png)
+
+#### Logica Reto 3
+
 ![Logica Reto 3](./assets/screenshots/f-reto3.png)
 
 ## Pruebas
