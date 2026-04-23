@@ -67,6 +67,12 @@ Durante el desarrollo se implementaron las siguientes funcionalidades:
 - Cambio dinamico de pantalla con manipulacion del DOM
 - Reset del estado del juego al reiniciar
 
+### Ejemplos de funcionalidades desarrolladas
+
+![Reset](./assets/screenshots/f-resetGame.png)
+![Encender/Apagar la musica](./assets/screenshots/f-MusicButtons.png)
+![Logica Reto 3](./assets/screenshots/f-reto3.png)
+
 ## Pruebas
 
 Para validar el MVP se comprobaron los siguientes casos:
@@ -83,13 +89,11 @@ Para validar el MVP se comprobaron los siguientes casos:
 - Caso correcto: resolver los tres retos y llegar a la pantalla final de exito
 - Caso de error: introducir una respuesta incorrecta o elegir una opcion equivocada y mostrar la pantalla de derrota
 
-
 ## Roles del equipo
 
 - UX/UI y Game Design: **Roman Dzhamalov**
-- HTML, CSS y Game Design: **Ekaterina Zotova**
-- JavaScript y Game Design: **Alexander Yakovlev**
-
+- HTML, CSS y Game Design, Product Owner: **Ekaterina Zotova**
+- JavaScript y Game Design, Scrum Master: **Alexander Yakovlev**
 
 ### Ejemplo de historia de usuario
 
@@ -119,7 +123,7 @@ Como jugador, quiero pulsar un boton para empezar el juego y entrar en el escape
 - CSS3
 - JavaScript
 - Git
-- Github 
+- Github
 
 ## Estructura del proyecto
 
@@ -152,7 +156,6 @@ GitHub Pages: https://alexjyad.github.io/Tu-Escape-Room-Web/
 MVP funcional en desarrollo y preparado para presentacion.
 
 ## Screenshots
-
 
 ### Inicio
 
